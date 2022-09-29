@@ -20,8 +20,9 @@ function BackDv(){
             <article className="inside">
                     <header>hola</header>
                 Esta etiqueta es article, aqui usamos header y footer
-                <footer>Chau</footer>
+                <footer className="foo">Chau</footer>
                 </article>
+            <BackGradient variant={show}></BackGradient>
            <Bubbles variant={show}>
             <div className="ball"></div>
             <div className="ball"></div>
@@ -143,7 +144,8 @@ const Container=styled.div`
     width: 500px;
     position: relative;
     outline: 2px solid blue;
-    
+    margin-left: 30%;
+   
     .inside{
         box-sizing: border-box;
         position: absolute;
@@ -155,7 +157,32 @@ const Container=styled.div`
         overflow: hidden;
         background: white;
         display: grid;
-        justify-content: space-around;
+        justify-content: space-between;
         text-align: center;
     }
+    .foo{
+        height: 25px;
+        margin-top: auto;
+    }
+`
+const gradient=keyframes`
+     0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+`
+const BackGradient=styled.body`
+    
+    background: ${(props)=>props.variant === 'lau' ? 'white': 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)'};
+    background-size: 400% 400%;
+    animation: ${gradient} 8s ease infinite;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
 `

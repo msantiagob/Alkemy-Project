@@ -8,6 +8,12 @@ const Generator = () => {
   const [color, setColor] = useState("#fff");
 
   //css
+  const SubTitle = styled.h2`
+    font-size: 1.5em;
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid #fff;
+  `;
   const Background = styled.div`
     background: Black;
     color: white;
@@ -17,27 +23,23 @@ const Generator = () => {
     color: white;
   `;
   const Card = styled.div`
-    background: none;
+    background: ${color};
+    width: 200px;
+    height: 200px;
     border-radius: 3px;
-
-    ${(props) =>
-      props.primary &&
-      css`
-        color: white;
-      `}
   `;
   const Performance = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+
+    padding: 20px 30%;
     text-align: center;
   `;
   return (
     <Background>
       <Performance>
         <div>
-          <Card>pepe</Card>
-          <Card primary>pepe</Card>
-          <Card primary> melo</Card>
+          <Card></Card>
         </div>
         <SketchPicker
           color={color}
@@ -48,21 +50,20 @@ const Generator = () => {
       </Performance>
       <br />
       <Code>
+        <SubTitle>HTML</SubTitle>
         <pre>{`
-  var foo = ${foo};
-  var bar = ${bar};
-  
-  <BrowserRouter>
-    <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/skeleton" element={<Skele />} />
-        <Route path="/code" element={<Code />} />
-        <Route path="/login2" element={<Login2 />} />
-        <Route path="/vl" element={<ValidationSchemaExample />} />
-    </Routes>
-  </BrowserRouter>
-  
-`}</pre>
+<div>
+    <div class="card" >
+
+    </div>
+</div>
+  `}</pre>
+        <SubTitle>CSS</SubTitle>
+        <pre>{`
+.card{
+    background-color:${color} ;
+}
+  `}</pre>
       </Code>
     </Background>
   );

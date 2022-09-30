@@ -10,12 +10,11 @@ function BackDv(){
         setShow('lau')
     }
 }
-   useEffect(()=>{
-    see()
-
+   useEffect(()=>{    
+    return see()
    },[])
     return(
-        <div style={{outline:'2px solid black'}}>
+        <div style={{outline:'2px solid black',height:'100vh'}}>
             <Container>
             <article className="inside">
                     <header>hola</header>
@@ -71,13 +70,13 @@ const animate=keyframes`
     }
 `
 const Bubbles=styled.div`
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height:500px;
     display: flex;
     justify-content:space-between;
     outline: 2px solid black;
-    margin-left: 100px;
-    margin-top: 100px; 
+    
+   
     position: relative;
     z-index: -1;
     visibility: ${(props)=>props.variant === 'lau' ? 'visible': 'hidden'};
@@ -149,7 +148,7 @@ const Container=styled.div`
     .inside{
         box-sizing: border-box;
         position: absolute;
-        margin-left: 45%;
+        margin-left: 35%;
         margin-top: 10%;
         height: 280px;
         width: 150px;
@@ -178,9 +177,9 @@ const gradient=keyframes`
 `
 const BackGradient=styled.body`
     
-    background: ${(props)=>props.variant === 'lau' ? 'white': 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)'};
+    background: ${(props)=>props.variant === 'lau' ? 'white' : props.variant !== 'lau'? 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)': 'white'};
     background-size: 400% 400%;
-    animation: ${gradient} 8s ease infinite;
+    animation: ${gradient} 5s ease infinite;
     position: absolute;
     height: 100%;
     width: 100%;

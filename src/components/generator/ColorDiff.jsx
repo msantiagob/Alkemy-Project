@@ -1,27 +1,51 @@
 import {useEffect,useState} from "react";
 import styled,{keyframes} from 'styled-components'
+import SimpleChange from "../animations/simpleBack";
 
 function BackDv(){
-   const[show,setShow]=useState('lau')
+   const[show,setShow]=useState('')
+   const[balls,setBalls]=useState('')
+   const[rotate,setRotate]=useState('')
    function see() {
-    if(show === 'lau'){
-        setShow('')
+    if(show === ''){
+        setShow('yes')
+        setBalls('')
+        setRotate('')
     }else{
-        setShow('lau')
+        setShow('')
     }
 }
+    function gradientB(){
+        if(balls === ''){
+            setShow('')
+            setBalls('yes')
+            setRotate('')
+        }else{
+            setBalls('')
+        }
+    }
+    function rotation(){
+        if(rotate === ''){
+            setRotate('yes')
+            setBalls('')
+            setShow('')
+        }else{
+            setRotate('')
+        }
+    }
    useEffect(()=>{    
-    return see()
+   see()
+   gradientB()
    },[])
     return(
-        <div style={{outline:'2px solid black',height:'100vh'}}>
+        <Father >
             <Container>
             <article className="inside">
                     <header>hola</header>
                 Esta etiqueta es article, aqui usamos header y footer
                 <footer className="foo">Chau</footer>
                 </article>
-            <BackGradient variant={show}></BackGradient>
+            <BackGradient variant={balls}></BackGradient>
            <Bubbles variant={show}>
             <div className="ball"></div>
             <div className="ball"></div>
@@ -48,42 +72,56 @@ function BackDv(){
             <div className="ball"></div>
          
             </Bubbles>
-            
+           <SimpleChange variant={rotate}/>
             </Container>
             <button onClick={()=>see()}>Animacion</button>
-            </div>
+            <button onClick={()=>gradientB()}>anima2</button>
+            <button onClick={()=>rotation()}>anima3</button>
+            <button>anima4</button>
+            <button>anima5</button>
+            </Father>
         
 
     )
 }
 export default BackDv
 
+const Father=styled.div`
+    height: 100vh;
+    
+`
 
 const animate=keyframes`
     0%{
         top:100%;
         opacity: 1;
     }
+    25%{
+        opacity: 0.9;
+    }
+    50%{
+        opacity: 0.8;
+    }
+    75%{
+        opacity: 0.6;
+    }
     100%{
        top:0%;
-       opacity: 0.6;
+       opacity: 0.4;
     }
 `
 const Bubbles=styled.div`
     width: 500px;
     height:500px;
     display: flex;
-    justify-content:space-between;
-    outline: 2px solid black;
-    
-   
+    justify-content:space-between;   
     position: relative;
     z-index: -1;
-    visibility: ${(props)=>props.variant === 'lau' ? 'visible': 'hidden'};
+    visibility: ${(props)=>props.variant === 'yes' ? 'visible': 'hidden'};
      .ball{
-            width: 12px;
-            height: 12px;            
-            background: radial-gradient(#3605A8,#FFF);  
+            width: 15px;
+            height: 15px;            
+            background: radial-gradient(#fff 20%,#3605A8 60%,#FFF 20%);  
             position: relative;
             animation: ${animate} infinite 1s linear;
             border-radius:50% ;
@@ -177,7 +215,7 @@ const gradient=keyframes`
 `
 const BackGradient=styled.body`
     
-    background: ${(props)=>props.variant === 'lau' ? 'white' : props.variant !== 'lau'? 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)': 'white'};
+    background: ${(props)=>props.variant === '' ? 'transparent' : props.variant === 'yes'? 'linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab)': 'transparent'};
     background-size: 400% 400%;
     animation: ${gradient} 5s ease infinite;
     position: absolute;

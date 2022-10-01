@@ -1,13 +1,37 @@
 import styled from "styled-components";
 
 function Horizontal() {
+  const Cards = styled.div`
+    background-color: rgb(32, 35, 41);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    width: 500px;
+    height: 290px;
+    flex-direction: row;
+  `;
+  
+  const Image = styled.img`
+    border: none;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    width: 290px;
+    background-color: #fff;
+  `;
+  const Division = styled.div`
+    display: grid;
+    justify-content: center;
+    align-items: center;
+  `;
   return (
     <Cards>
       <Image
         src="https://rickandmortyapi.com/api/character/avatar/192.jpeg"
         alt=""
       />
-      <div class="division">
+      <Division>
         <Section>
           <h2>Title</h2>
         </Section>
@@ -21,13 +45,29 @@ function Horizontal() {
           <Link href="#">Link</Link>
         </Section>
         <Section>
-          <button class="btn-card btn-info">Info</button>
+          <Info>Info</Info>
         </Section>
-      </div>
+      </Division>
     </Cards>
   );
 }
 function Vertical() {
+  const Cards = styled.div`
+    background-color: rgb(32, 35, 41);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    width: 290px;
+  `;
+  const Image = styled.img`
+    border: none;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    width: 290px;
+    background-color: #fff;
+  `;
   return (
     <Cards>
       <Image
@@ -49,28 +89,12 @@ function Vertical() {
         <Link href="#">Link</Link>
       </Section>
       <Section>
-        <button class="btn-card btn-info">Info</button>
+        <Info>Info</Info>
       </Section>
     </Cards>
   );
 }
-const Cards = styled.div`
-  background-color: rgb(32, 35, 41);
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border-radius: 25px;
-  color: white;
-  width: 290px;
-  margin: 15px;
-`;
-const Image = styled.img`
-  border: none;
-  border-top-right-radius: 25px;
-  border-top-left-radius: 25px;
-  width: 290px;
-  background-color: #fff;
-`;
+
 const Link = styled.a`
   text-decoration: none;
   color: rgb(160, 160, 160);
@@ -79,5 +103,28 @@ const Link = styled.a`
 `;
 const Section = styled.div`
   margin: 2px;
+`;
+const Info = styled.button`
+  box-shadow: 0px 1px 0px 0px #019ad2;
+  background: linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+  background-color: #33bdef;
+  border-radius: 6px;
+  border: 1px solid #057fd0;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 6px 24px;
+  text-decoration: none;
+  text-shadow: 0px -1px 0px #5b6178;
+  &:hover {
+    background: linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+    background-color: #019ad2;
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
 `;
 export { Horizontal, Vertical };

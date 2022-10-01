@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 import { SketchPicker } from "react-color";
 import { useState } from "react";
-import { Horizontal, Vertical } from "../Cards/Cards";
+import { Horizontal, Vertical } from "../cards/Cards";
 const Generator = () => {
   const [color, setColor] = useState("#fff");
   const Background = styled.div`
@@ -9,18 +9,19 @@ const Generator = () => {
   `;
   return (
     <Background>
-      <Performance>
-        <div>
+      <SpaceWorker>
+        <Work>
           <Horizontal />
-        </div>
-        <SketchPicker
-          color={color}
-          onChangeComplete={(color) => {
-            setColor(color.hex);
-          }}
-        />
-        <Vertical />
-      </Performance>
+        </Work>
+        <Performance>
+          <SketchPicker
+            color={color}
+            onChangeComplete={(color) => {
+              setColor(color.hex);
+            }}
+          />
+        </Performance>
+      </SpaceWorker>
       <br />
       <Code>
         <SubTitle>HTML</SubTitle>
@@ -55,13 +56,21 @@ article {
 
 //css
 //Page Design
+const SpaceWorker = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  text-align: center;
+  margin: 20px 0 0 100px;
+`;
+const Work = styled.div`
+  width: 290px;
+`;
 
 const Performance = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 30px;
-  text-align: center;
+  margin: 0 0 0 100px;
 `;
+
 //Code
 const Code = styled.div`
   background: #5c5c5b;
@@ -73,6 +82,7 @@ const SubTitle = styled.h2`
   color: white;
   border-bottom: 1px solid #fff;
 `;
+
 // const Card = styled.div`
 //   background: ${color};
 //   width: 200px;

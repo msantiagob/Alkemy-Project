@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import styled,{keyframes} from "styled-components";
 
 export default function Loop({ver}){
@@ -93,7 +93,7 @@ const animate=keyframes`
 
 const Container=styled.div`
     height: 500px;
-    width: 500px;
+    width: 400px;
     border: 2px solid black;
     overflow: hidden;
     position: absolute;

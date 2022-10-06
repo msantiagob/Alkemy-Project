@@ -1,71 +1,93 @@
-import styled, { css } from "styled-components";
+import styled, { ThemeConsumer } from "styled-components";
 import { SketchPicker } from "react-color";
 import { useState } from "react";
-
+import { Horizontal, Vertical } from "../Cards/Cards";
 const Generator = () => {
-  var foo = 1;
-  var bar = '"a b   c"';
   const [color, setColor] = useState("#fff");
-
-  //css
   const Background = styled.div`
-    background: Black;
-    color: white;
-  `;
-  const Code = styled.div`
-    background: #5c5c5b;
-    color: white;
-  `;
-  const Card = styled.div`
-    background: none;
-    border-radius: 3px;
-
-    ${(props) =>
-      props.primary &&
-      css`
-        color: white;
-      `}
-  `;
-  const Performance = styled.div`
-    display: flex;
-    justify-content: center;
-    text-align: center;
+    background: ${color};
   `;
   return (
     <Background>
-      <Performance>
-        <div>
-          <Card>pepe</Card>
-          <Card primary>pepe</Card>
-          <Card primary> melo</Card>
-        </div>
-        <SketchPicker
-          color={color}
-          onChangeComplete={(color) => {
-            setColor(color.hex);
-          }}
-        />
-      </Performance>
+      <SpaceWorker>
+        <Work>
+          <Horizontal />
+        </Work>
+        <Performance>
+          <SketchPicker
+            color={color}
+            onChangeComplete={(color) => {
+              setColor(color.hex);
+            }}
+          />
+        </Performance>
+      </SpaceWorker>
       <br />
       <Code>
+        <SubTitle>HTML</SubTitle>
+
         <pre>{`
-  var foo = ${foo};
-  var bar = ${bar};
-  
-  <BrowserRouter>
-    <Routes>
-        <Route path="/" element={<Login />} />
-        <Route path="/skeleton" element={<Skele />} />
-        <Route path="/code" element={<Code />} />
-        <Route path="/login2" element={<Login2 />} />
-        <Route path="/vl" element={<ValidationSchemaExample />} />
-    </Routes>
-  </BrowserRouter>
-  
+  <article>
+    <img src={props.character.image} alt="" />
+    <div class=${color} ></div>
+  </article>
 `}</pre>
+        <SubTitle>CSS</SubTitle>
+        <pre>{`
+article {
+    background-color: rgb(60, 62, 68);
+    width: 290px;
+    color: white;
+    margin: 10px;
+    border-radius: 25px;
+  }
+  img {
+    border: none;
+    border-top-right-radius: 25px;
+    border-top-left-radius: 25px;
+    width: 290px;
+  }
+
+  `}</pre>
       </Code>
     </Background>
   );
 };
+
+//css
+//Page Design
+const SpaceWorker = styled.div`
+  display: flex;
+  justify-content: space-around;
+  padding: 60px;
+  text-align: center;
+  margin: 20px 0 0 100px;
+`;
+const Work = styled.div`
+  width: 290px;
+`;
+
+const Performance = styled.div`
+  margin: 0 0 0 100px;
+`;
+
+//Code
+const Code = styled.div`
+  background: #5c5c5b;
+  color: white;
+`;
+const SubTitle = styled.h2`
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid #fff;
+`;
+
+// const Card = styled.div`
+//   background: ${color};
+//   width: 200px;
+//   height: 200px;
+//   border-radius: 3px;
+// `;
 
 export default Generator;

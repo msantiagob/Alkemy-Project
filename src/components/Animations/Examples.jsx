@@ -54,8 +54,8 @@ export default function Lauta (){
         <div className="ani-container">
             <article className="info-container">
                 <header>Lautaro aniamciones </header>
-                    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"/>
-                    <hr style={{'background-color': 'black','height':'2px'}}/>
+                    <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt='imagen-de-muestra'/>
+                    <hr />
                     <p>aqui va la descripccion de la persona</p>
                     <footer className="social-media"><button>1</button>
                     <button>2</button>
@@ -103,28 +103,35 @@ const Example=styled.div`
         margin: auto;
         z-index: 1;
         display: grid;
-        transition: all .2s ease-in;
+        transition: all .78s ease-in;
         justify-content: space-between;
         transition-property: background;
         &:hover{
             background: transparent;
             transition-delay: .78s;
         }
+        hr{
+            background:linear-gradient(90deg, red,blue);
+            height: 3px;
+            border: none;
+            margin-left:  2%;
+        }
         img{
-            width: 80px;
-            height: 80px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             margin-left: 5%;
         }
         header{
             outline: 2px solid black;
             width: 200px;
-            height: 50px;
+            height: 30px;
             margin-left: 10%;
             margin-top: 5%;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
             font-size: larger;
             letter-spacing: 0.5px;
+            text-align: center;
         }
         .social-media{
             height: 50px;
@@ -140,6 +147,8 @@ const Example=styled.div`
                 width: 35px;
                 margin-top: auto;
                 cursor: pointer;
+                background: red;
+                margin-bottom: 1%;
             }
         }
 

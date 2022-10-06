@@ -52,7 +52,7 @@ const animate=keyframes`
 `
 const Container = styled.div`
     height: 500px;
-    width: 500px;
+    width: 400px;
     display: flex;
     justify-content:space-between ;
     position: relative;

@@ -1,0 +1,52 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    width: inherit;
+    color: black;
+}
+
+.form-control{
+    padding: 22px 20px;
+    border-radius: 8px;
+    border: 1px solid white;
+    align-items: center;
+    background-color: white;
+}
+
+.auth{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    height: 300px;
+    width: 250px;
+    
+}
+        
+        
+
+.auth > div{
+    display: flex;
+    flex-direction: column;
+}
+
+.auth > div >*:not(label){
+    padding: 8px 5px;
+    border-radius: 8px;
+}
+
+.auth > button{
+    padding: 8px 5px;
+    border-radius: 8px;
+    width: 200px;
+}
+
+.errors{
+    color: red;
+}

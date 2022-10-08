@@ -284,19 +284,19 @@ sup {
     .home--hero,
     .home--main{
         flex-direction: row;
-        /* border: 1px solid white; */
         height: 100vh;
         justify-content: space-around;
     }
 
     .home--hero > h2{
-        /* flex: 0 1; */
-        /* border: 1px solid white; */
         padding: 32px 28px;
         width: 50%;
         font-size: 2.4rem;
     }
     .home--hero > img{
         width: 350px;
+    }
+    .row-reverse_desktop{
+        flex-direction: row-reverse;
     }
 }

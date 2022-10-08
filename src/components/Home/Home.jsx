@@ -28,7 +28,7 @@ export const Home = () => {
                 </div>
             </section>
             <section >
-                <div  className="home--hero">
+                <div  className="home--hero row-reverse_desktop">
                     <h2>Stop wasting your time designing cards, we do that for you! </h2>
                     <img src="https://picsum.photos/id/237/200/300" alt="picsum" />
                 </div>
@@ -36,8 +36,6 @@ export const Home = () => {
 
             <section >
                 <div className="home--main">
-
-
                     <div>
                         <img src="https://picsum.photos/seed/picsum/200/300" alt="picsum"  />
                         <h3>Be more productive.</h3>

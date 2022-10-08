@@ -1,4 +1,4 @@
-import './register.style.css';
+import '../auth.style.css';
 
 export const Register = ()=> {
     return (

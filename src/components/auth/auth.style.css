@@ -47,6 +47,35 @@
     width: 200px;
 }
 
+.error-inputs{
+    border: 1px solid red;
+}
+
 .errors{
     color: red;
+}
+
+@media screen and (min-width: 600px){
+    .auth{
+        width: 400px;
+    }
+    .auth > button,
+    .auth > div >*:not(label)
+    {
+        width: 350px;
+    }
+
+    .auth > div{
+        align-items: center;
+        justify-content: center;
+    }
+
+    a{
+        /* border: 1px solid black; */
+        text-align: center;
+    }
+    a:hover{
+        background-color: rgb(230, 133, 133);
+        color: white;
+    }
 }

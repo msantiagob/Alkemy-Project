@@ -34,12 +34,13 @@ export const Login = ()=> {
                             <Form className='auth'>
                                 <div>
                                     <label htmlFor='email'>Email:</label>
-                                    <Field type='input' name='email' />
+                                    <Field type='input' name='email' className={errors.email && touched.email ? "error-inputs" : ""}/>
                                     {errors.email && touched.email && <div className='errors'>{errors.email}</div>}
                                 </div>
                                 <div>
                                     <label htmlFor='password'>Password:</label>
-                                    <Field type='input' name='password' />
+                                    <Field type='input' name='password'  className={errors.password && touched.password ? "error-inputs" : ""} />
+                                    {errors.password && touched.password && <div className='errors'>{errors.password}</div>}
                                 </div>
                                 <button type='submit'>Login</button>
                                 <div>

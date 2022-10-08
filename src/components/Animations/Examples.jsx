@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Bubble from "./Blubble";
 import GradientMotion from "./GradientMoves";
 import Loop from "./LoopsUps";
+import Letters from "./NeonLetters";
 import DotsRotation from "./Spiral";
 
 
@@ -11,12 +12,14 @@ export default function Lauta (){
     const[gradient,setGradient]=useState('')
     const[dots,setDots]=useState('')
     const[corner,setCorner]=useState('')
+    const[neon,setNeon]=useState('')
     function seeBubbles(){
         if(show === ''){
             setShow('yes')
             setGradient('')
             setDots('')
             setCorner('')
+            setNeon('')
         }else{
             setShow('')
         }
@@ -25,6 +28,7 @@ export default function Lauta (){
         if(gradient === ''){
             setGradient('yes')
             setShow('')
+            setNeon('')
             setDots('')
             setCorner('')
         }else{
@@ -36,6 +40,7 @@ export default function Lauta (){
             setDots('yes')
             setGradient('')
             setShow('')
+            setNeon('')
             setCorner('')
         }else{
             setDots('')
@@ -46,17 +51,31 @@ export default function Lauta (){
             setDots('')
             setGradient('')
             setShow('')
+            setNeon('')
             setCorner('yes')
         }else{
             setCorner('')
     }}
+    function seeNeons(){
+        if( neon === ''){
+            setDots('')
+            setGradient('')
+            setShow('')
+            setNeon('yes')
+            setCorner('')
+        }else{
+            setNeon('')
+        }
+    }
     return(<Example>
         <div className="ani-container">
             <article className="info-container">
                 <header>Lautaro aniamciones </header>
                     <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt='imagen-de-muestra'/>
                     <hr />
-                    <p>aqui va la descripccion de la persona</p>
+                    <div className="text-description">
+                    <p>Desarrollador de aplicaciones Front-end con mas de 1 año de experiencia</p>
+                    </div>
                     <footer className="social-media"><button>1</button>
                     <button>2</button>
                     <button>3</button></footer>
@@ -65,13 +84,14 @@ export default function Lauta (){
         <GradientMotion ver={gradient}/>
         <DotsRotation ver={dots} />
         <Loop ver={corner}/>
+        <Letters ver={neon}/>
         </div>
         <div className="btn-display">
         <button onClick={()=>seeBubbles()}>Burbujas </button>
         <button onClick={()=>seeGradient()}>Gradiente</button>
         <button onClick={()=>seeDots()}>Espiral</button>
         <button onClick={()=>visibleCorner()}> Esquinas</button>
-        <button>1</button>
+        <button onClick={()=>seeNeons()}>Neon</button>
         <button>2</button>
         <button>3</button>
         <button>4</button>
@@ -94,8 +114,9 @@ const Example=styled.div`
         position: absolute;
         outline: 2px solid red;
         width: 240px;
+        color: #fff;
         height: 380px;
-        background: #fff;
+        background: #000;
         left: 0;
         top: 0;
         right: 0;
@@ -110,11 +131,17 @@ const Example=styled.div`
             background: transparent;
             transition-delay: .78s;
         }
+        .text-description{
+            width: 200px;
+            height: 80px;
+            margin-left: 8%;
+        }
         hr{
             background:linear-gradient(90deg, red,blue);
             height: 3px;
             border: none;
-            margin-left:  2%;
+            margin-left:  8%;
+            width: 200px;
         }
         img{
             width: 90px;
@@ -123,7 +150,7 @@ const Example=styled.div`
             margin-left: 5%;
         }
         header{
-            outline: 2px solid black;
+           // outline: 2px solid black;
             width: 200px;
             height: 30px;
             margin-left: 10%;
@@ -136,7 +163,7 @@ const Example=styled.div`
         .social-media{
             height: 50px;
             width: 120px;
-            outline: 2px solid black;
+           // outline: 2px solid black;
             margin-top: auto;
             margin-left: 14%;
             display: flex;
@@ -148,7 +175,7 @@ const Example=styled.div`
                 margin-top: auto;
                 cursor: pointer;
                 background: red;
-                margin-bottom: 1%;
+                margin-bottom: 3%;
             }
         }
 

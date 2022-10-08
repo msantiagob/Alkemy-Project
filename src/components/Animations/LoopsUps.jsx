@@ -2,8 +2,7 @@ import { useState } from "react";
 import styled,{keyframes} from "styled-components";
 
 export default function Loop({ver}){
-    const[time,setTime]=useState(4)
- 
+    const[time,setTime]=useState(4) 
     return(
         <Container variant={ver} timeLapse={`${time}s`} onMouseOver={()=>setTime(1)} onMouseOut={()=>setTime(4)} >
             <div className="content-animation">

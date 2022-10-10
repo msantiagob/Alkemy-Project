@@ -7,7 +7,7 @@ import Code from "../code/Code";
 const Generator = () => {
   const [color, setColor] = useState("#fff");
   const Background = styled.div`
-    background: ${color};
+    background: gray;
   `;
   return (
     <Background>

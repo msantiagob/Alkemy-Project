@@ -1,26 +1,6 @@
 import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { Info, Add, Delete, Edit } from "../card/Buttons";
-import { v4 as uuid } from "uuid";
-import Drop from "./Drop";
-
-const itemsFromBackend = [
-  { id: uuid(), content: <Info /> },
-  { id: uuid(), content: <Add /> },
-  { id: uuid(), content: <Delete /> },
-  { id: uuid(), content: <Edit /> },
-];
-
-const columnsFromBackend = {
-  [uuid()]: {
-    name: "work",
-    items: itemsFromBackend,
-  },
-  [uuid()]: {
-    name: "card",
-    items: [],
-  },
-};
+import { columnsFromBackend } from "./Items";
 
 const onDragEnd = (result, columns, setColumns) => {
   if (!result.destination) return;

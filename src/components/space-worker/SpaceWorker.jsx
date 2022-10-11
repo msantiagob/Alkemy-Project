@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
-import { SketchPicker } from "react-color";
-import Card from "../card/Card";
-import { Info, Add, Delete, Edit } from "../card/Buttons";
+import Card from "./card/Card";
+import Picker from "./picker/Picker";
+import { Info, Add, Delete, Edit } from "./card/Buttons";
 import { useState } from "react";
 import styled from "styled-components";
 
 const SpaceWorker = () => {
   const [orientation, setOrientation] = useState(false);
-  const [background, setBackground] = useState("#fff");
+  const [background, setBackground] = useState("black");
   const changeOrientation = () => {
     setOrientation(!orientation);
   };
@@ -26,12 +25,7 @@ const SpaceWorker = () => {
   return (
     <SWorker>
       <Performance>
-        <SketchPicker
-          color={background}
-          onChangeComplete={(color) => {
-            setBackground(color.hex);
-          }}
-        />
+        <Picker />
         <Button onClick={changeOrientation}>submit</Button>
         <Div>
           <Info />

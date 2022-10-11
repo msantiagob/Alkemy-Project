@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SpaceWorker from "../space-worker/SpaceWorker";
-import Code from "../code/Code";
+import Code from "../space-worker/code/Code";
 
 const Background = styled.div`
   background: gray;

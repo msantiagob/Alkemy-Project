@@ -1,15 +1,15 @@
-import styled, { ThemeConsumer } from "styled-components";
-import { SketchPicker } from "react-color";
-import { useState } from "react";
-import { Horizontal, Vertical } from "../cards/Cards";
+import styled from "styled-components";
+
+import SpaceWorker from "../space-worker/SpaceWorker";
+import Code from "../code/Code";
+
+const Background = styled.div`
+  background: gray;
+`;
+
 const Generator = () => {
-  const [color, setColor] = useState("#fff");
-  const Background = styled.div`
-    background: ${color};
-  `;
   return (
     <Background>
-      <DragDrop />
       <SpaceWorker />
       <br />
       <Code />

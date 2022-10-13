@@ -52,11 +52,10 @@ const animate=keyframes`
 `
 const Container = styled.div`
     height: 500px;
-    width: 500px;
+    width: 400px;
     display: flex;
     justify-content:space-between ;
-    position: relative;
-    z-index: -1;
+    position: relative;    
     outline: 2px solid blue;
     visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     .ball{

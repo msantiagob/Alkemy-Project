@@ -4,8 +4,4 @@ import App from "./components/app";
 import './Index.css'
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App classname='fix' />
-  </React.StrictMode>
-);
+root.render(<App />);

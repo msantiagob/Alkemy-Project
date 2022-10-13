@@ -1,19 +1,28 @@
+import { useState } from "react";
 import styled, { css } from "styled-components";
 import { Info, Add, Delete, Edit } from "./Buttons";
 
 function Card({ cardProperties }) {
   let { orientation, background, buttons } = cardProperties;
-
-  
+  const[images,setImages]=useState([])
+  const imgDefault='https://www.dklo.co/DkLMRsT/cfDftOpaytr?u=QY9nNLQ5uo28'
+  const uploadPhoto=(file)=>{       
+    const arr=Array.from(file) // si quisiera subir mas de una foto aunque podria usar spred operator
+    const allImg= arr.map((e)=>{
+       return URL.createObjectURL(e)
+    })           
+    setImages(allImg)        
+   }
 
   return (
     <Cards category={orientation} background={background}>
       <Image
         category={orientation}
         vertical
-        src="https://rickandmortyapi.com/api/character/avatar/192.jpeg"
+        src={!images[0] ? imgDefault:images[0]}
         alt=""
       />
+      <input type='file' onChange={(e)=>uploadPhoto(e.target.files)} accept="image/jpeg, image/png"/>
       <Division>
         <Section>
           <h2>Title</h2>
@@ -45,7 +54,6 @@ const Cards = styled.div`
   text-align: center;
   border-radius: 25px;
   color: white;
-
   ${(props) =>
     props.category
       ? css`
@@ -56,11 +64,16 @@ const Cards = styled.div`
       width: 290px;
       flex-direction: column;
       `};
+  input{
+    width:30px;
+    cursor:pointer;
+  }
 `;
 
 const Image = styled.img`
-  border: none;
   background-color: #fff;
+  object-fit: cover;
+ // height: 250px;
   ${(props) =>
     props.category
       ? css`

@@ -1,6 +1,7 @@
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Bubble from "./Blubble";
+import ShakeIt from "./EarthQuake";
 import GradientMotion from "./GradientMoves";
 import Loop from "./LoopsUps";
 import Letters from "./NeonLetters";
@@ -13,6 +14,7 @@ export default function Lauta (){
     const[dots,setDots]=useState('')
     const[corner,setCorner]=useState('')
     const[neon,setNeon]=useState('')
+    const[booty,setBooty]=useState('')
     function seeBubbles(){
         if(show === ''){
             setShow('yes')
@@ -67,6 +69,18 @@ export default function Lauta (){
             setNeon('')
         }
     }
+    function seeQuake(){
+        if( booty === ''){
+            setDots('')
+            setGradient('')
+            setShow('')
+            setBooty('yes')
+            setNeon('')
+            setCorner('')
+        }else{
+            setBooty('')
+        }
+    }
     return(<Example>
         <div className="ani-container">
             <article className="info-container">
@@ -85,6 +99,7 @@ export default function Lauta (){
         <DotsRotation ver={dots} />
         <Loop ver={corner}/>
         <Letters ver={neon}/>
+        <ShakeIt  ver={booty}/>
         </div>
         <div className="btn-display">
         <button onClick={()=>seeBubbles()}>Burbujas </button>
@@ -92,7 +107,7 @@ export default function Lauta (){
         <button onClick={()=>seeDots()}>Espiral</button>
         <button onClick={()=>visibleCorner()}> Esquinas</button>
         <button onClick={()=>seeNeons()}>Neon</button>
-        <button>2</button>
+        <button onClick={()=>seeQuake()}>Piezas</button>
         <button>3</button>
         <button>4</button>
         </div>
@@ -101,6 +116,7 @@ export default function Lauta (){
 
 const Example=styled.div`
     display: grid;
+    overflow-y: hidden;
     width: 100%;   
     height: 100vh;
     justify-content: center;   

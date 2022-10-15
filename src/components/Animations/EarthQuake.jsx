@@ -72,7 +72,7 @@ const Container=styled.div`
     span{
     inset: 0;
     transition: 3s;
-    background-size: 100% 100%;
+    background-size: cover;
     position: absolute;
     background: url("https://rickandmortyapi.com/api/character/avatar/1.jpeg");
    }

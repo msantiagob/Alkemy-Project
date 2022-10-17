@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import AddNewImage from "../BtnFunctions/Functions/AddImageProfile";
 
 export default function Wallet(){
     return(
         <Container>
             <header>
-                <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="hola"/>
+                <AddNewImage props='https://rickandmortyapi.com/api/character/avatar/1.jpeg'/>
             </header>
             <footer>
                 <div className="positions">
@@ -39,11 +40,7 @@ const Container=styled.article`
     flex-direction: column;
     align-items: center;
     position: relative;
-    img{
-        height: 15.1rem;
-        width: 15.1rem;
-        border-radius: 50%;
-    }   
+    
     footer{
         height:14.5rem;
         width: 84%;

@@ -1,28 +1,36 @@
 import styled from "styled-components";
+import { useState,useEffect } from "react";
+import FontMenu from "./Functions/DropdownMenu";
+import ValuesBar from "./Functions/OpacityValues";
+import Trimmings from "./Functions/ImageShape";
+import ChekBack from "./Functions/BackgroundColors";
 export default function GirdOfButtons(){
-    return(
+  const[imageProfile,setImageProfile]=useState('') 
+  return(
         <Cotnainer>
-              <div>
-                input de opciones
+              <div className="ftn-container">
+                <FontMenu/>
               </div>
-              <div>foto de perfil</div>
-              <div>colores de fondo :D</div>
-              <div>
-                    opacidad
+              <div className="ftn-container">
+                <button>imagen de perfil</button></div>
+              <div className="ftn-container">
+                <ChekBack/></div>
+              <div className="ftn-container">
+                   <ValuesBar/>
               </div>
-              <div>
+              <div className="ftn-container">
                 bordes y estilos
               </div>
-              <div>
+              <div className="ftn-container">
                 Sombras para efectos 3D
               </div>
-              <div>
-                forma de la foto
+              <div className="ftn-container">
+                <Trimmings/>
               </div>
-              <div>
+              <div className="ftn-container">
                 botones de rede sociales
               </div>
-              <div>
+              <div className="ftn-container">
                 vertical u horizontal
               </div>
         </Cotnainer>
@@ -34,10 +42,10 @@ const Cotnainer=styled.div`
     outline: 2px solid blue;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    div{
+    .ftn-container{
         outline: 2px solid black;
-        width: auto;
-        height: auto;
+        width: 180px;
+        height: 130px;
         text-align: center;
        // margin: auto;
     }

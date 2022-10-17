@@ -1,4 +1,4 @@
-html {
+/* html {
     line-height: 1.15;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -9,8 +9,13 @@ body {
     min-height: 100vh;
     background-color: rgb(81, 81, 114);
     color: rgb(236, 233, 233);
+}*/
+.home{
+  margin: 0;
+  min-height: 100vh;
+  background-color: rgb(81, 81, 114);
+  color: rgb(236, 233, 233);
 }
-  
 article,
 aside,
 footer,
@@ -136,8 +141,8 @@ sup {
     overflow: hidden;
   }
   
-  button,
-  input,
+  
+  
   optgroup,
   select,
   textarea {
@@ -146,13 +151,8 @@ sup {
     line-height: 1.15;
     margin: 0;
   }
+
   
-  button,
-  input {
-    overflow: visible;
-  }
-  
-  button,
   select {
     text-transform: none;
   }

@@ -27,6 +27,8 @@ const Container = styled.body`
     height: 100vh;
     width: auto;
     padding-top: 1%;
+    background: none;
+    color:#000000;
 `
 
 const Cardplay=styled.header`

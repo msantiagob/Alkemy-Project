@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { useState,useEffect } from "react";
 import FontMenu from "./Functions/DropdownMenu";
 import ValuesBar from "./Functions/OpacityValues";
+import Trimmings from "./Functions/ImageShape";
+import ChekBack from "./Functions/BackgroundColors";
 export default function GirdOfButtons(){
   const[imageProfile,setImageProfile]=useState('') 
   return(
@@ -11,7 +13,8 @@ export default function GirdOfButtons(){
               </div>
               <div className="ftn-container">
                 <button>imagen de perfil</button></div>
-              <div className="ftn-container">colores de fondo :D</div>
+              <div className="ftn-container">
+                <ChekBack/></div>
               <div className="ftn-container">
                    <ValuesBar/>
               </div>
@@ -22,7 +25,7 @@ export default function GirdOfButtons(){
                 Sombras para efectos 3D
               </div>
               <div className="ftn-container">
-                forma de la foto
+                <Trimmings/>
               </div>
               <div className="ftn-container">
                 botones de rede sociales

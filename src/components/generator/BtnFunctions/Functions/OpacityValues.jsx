@@ -11,7 +11,7 @@ export default function ValuesBar(){
     return(
         <Container>
         <label className="opaci">
-          Opacity {state.price / 10}
+          Opacity{state.price / 10}
           <input
           className="range-input"
             type="range"

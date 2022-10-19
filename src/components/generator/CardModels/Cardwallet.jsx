@@ -8,16 +8,14 @@ export default function Wallet(){
 
     const { bgColor } = useContext(ColorContext);
 
-    const footerTestStyle = {
-        backgroundColor: bgColor
-    }
+   
     
     return(
-        <Container>
+        <Container newBgColor={`${bgColor}`}>
             <header>
                 <AddNewImage props='https://rickandmortyapi.com/api/character/avatar/1.jpeg'/>
             </header>
-            <footer style={footerTestStyle}>
+            <footer >
                 <div className="positions">
                 <div className="description">
                 <div className="profileinfo"> nombre</div>
@@ -59,7 +57,7 @@ const Container=styled.article`
         border-radius: 0 0 10px 10px;
         top: 40%;
         z-index: -1;
-        background: #650765dc;
+        background: ${(props)=>props.newBgColor};
         padding-top: 35%;
     }
     .positions{

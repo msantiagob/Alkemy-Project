@@ -4,6 +4,7 @@ import FontMenu from "./Functions/DropdownMenu";
 import ValuesBar from "./Functions/OpacityValues";
 import Trimmings from "./Functions/ImageShape";
 import ChekBack from "./Functions/BackgroundColors";
+import ChangePicture from "./Functions/ChangeProfileImg";
 export default function GirdOfButtons(){
   const[imageProfile,setImageProfile]=useState('') 
   return(
@@ -12,7 +13,8 @@ export default function GirdOfButtons(){
                 <FontMenu/>
               </div>
               <div className="ftn-container">
-                <button>imagen de perfil</button></div>
+                <ChangePicture/>
+                </div>
               <div className="ftn-container">
                 <ChekBack/></div>
               <div className="ftn-container">

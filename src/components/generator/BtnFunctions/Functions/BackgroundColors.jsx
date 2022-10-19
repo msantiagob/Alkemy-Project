@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 export default function ChekBack(){
     const[back1,setBack1]=useState(false)
@@ -9,16 +9,32 @@ export default function ChekBack(){
     function newBackground2(){
         setBack2(!back2)
     }
+
+    const [bgColor, setBgColor] = useState()
+
+    const handleBgColorChange = (e) => {
+        let backgroundColor = e.currentTarget.value;
+        // setBgColor(backgroundColor);
+        console.log(backgroundColor)
+    }
+
+    // useEffect( ()=>{
+        
+    // },[])
+
     return(
         <Container>
-            <label className="back1">
+            {/* <label className="back1">
                 <p>Fondo 1</p>
                 <input type='checkbox' checked={back1} onChange={newBackground1} />
                 </label> 
                 <label className="back1">
                 <p>Fondo 2</p>
                 <input type='checkbox' checked={back2} onChange={newBackground2} />
-                </label>              
+            </label>               */}
+
+            <label htmlFor="bg-color">BG color</label>
+            <input type='color' name='bg-color' onChange={handleBgColorChange}/>
 
         </Container>
     )

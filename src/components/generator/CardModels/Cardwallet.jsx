@@ -1,13 +1,23 @@
 import styled from "styled-components";
 import AddNewImage from "../BtnFunctions/Functions/AddImageProfile";
 
+import ColorContext from "../../../context/ColorContext";
+import { useContext } from "react";
+
 export default function Wallet(){
+
+    const { bgColor } = useContext(ColorContext);
+
+    const footerTestStyle = {
+        backgroundColor: bgColor
+    }
+    
     return(
         <Container>
             <header>
                 <AddNewImage props='https://rickandmortyapi.com/api/character/avatar/1.jpeg'/>
             </header>
-            <footer>
+            <footer style={footerTestStyle}>
                 <div className="positions">
                 <div className="description">
                 <div className="profileinfo"> nombre</div>

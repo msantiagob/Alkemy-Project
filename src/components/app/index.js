@@ -5,18 +5,21 @@ import { Home } from "../Home/Home";
 import { Login } from "../auth/Login/Login"
 import { Register } from "../auth/Register/Register"
 import Lauta from "../animations/Examples";
+import { ColorProvider } from "../../context/ColorContext";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Generator />} />
-        <Route path='lauta' element={<Lauta/>}/>
-        <Route path='/home' element={<Home />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register />} />
-      </Routes>
-    </BrowserRouter>
+    <ColorProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Generator />} />
+          <Route path='lauta' element={<Lauta/>}/>
+          <Route path='/home' element={<Home />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register' element={<Register />} />
+        </Routes>
+      </BrowserRouter>
+    </ColorProvider>
   );
 }
 

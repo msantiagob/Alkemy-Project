@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
+
+import { useContext  } from "react";
+import ColorContext from "../../../../context/ColorContext";
+
 export default function ChekBack(){
     const[back1,setBack1]=useState(false)
     const[back2,setBack2]=useState(false)
@@ -10,17 +14,7 @@ export default function ChekBack(){
         setBack2(!back2)
     }
 
-    const [bgColor, setBgColor] = useState()
-
-    const handleBgColorChange = (e) => {
-        let backgroundColor = e.currentTarget.value;
-        // setBgColor(backgroundColor);
-        console.log(backgroundColor)
-    }
-
-    // useEffect( ()=>{
-        
-    // },[])
+    const { handleBgColorChange } = useContext(ColorContext);
 
     return(
         <Container>

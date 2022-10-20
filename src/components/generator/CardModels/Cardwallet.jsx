@@ -1,12 +1,22 @@
 import styled from "styled-components";
+import AddNewImage from "../BtnFunctions/Functions/AddImageProfile";
+
+import ColorContext from "../../../context/ColorContext";
+import { useContext } from "react";
 
 export default function Wallet(){
+
+    const { bgColor,images } = useContext(ColorContext);
+
+    
+    
     return(
-        <Container>
+        <Container newBgColor={`${bgColor}`}>
             <header>
-                <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="hola"/>
+            
+                <AddNewImage props={images}/>
             </header>
-            <footer>
+            <footer >
                 <div className="positions">
                 <div className="description">
                 <div className="profileinfo"> nombre</div>
@@ -39,11 +49,7 @@ const Container=styled.article`
     flex-direction: column;
     align-items: center;
     position: relative;
-    img{
-        height: 15.1rem;
-        width: 15.1rem;
-        border-radius: 50%;
-    }   
+    
     footer{
         height:14.5rem;
         width: 84%;
@@ -52,7 +58,7 @@ const Container=styled.article`
         border-radius: 0 0 10px 10px;
         top: 40%;
         z-index: -1;
-        background: #650765dc;
+        background: ${(props)=>props.newBgColor};
         padding-top: 35%;
     }
     .positions{

@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 export default function Wallet(){
 
-    const { bgColor,images } = useContext(ColorContext);
+    const { bgColor,images, opacity } = useContext(ColorContext);
 
     
     
@@ -16,7 +16,7 @@ export default function Wallet(){
             
                 <AddNewImage props={images}/>
             </header>
-            <footer >
+            <footer style={ { opacity: opacity} }>
                 <div className="positions">
                 <div className="description">
                 <div className="profileinfo"> nombre</div>

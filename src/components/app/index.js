@@ -4,7 +4,7 @@ import Generator from "../generator/Generator";
 import { Home } from "../Home/Home";
 import { Login } from "../auth/Login/Login"
 import { Register } from "../auth/Register/Register"
-import Lauta from "../Animations/Examples";
+import Lauta from "../animations/Examples";
 import { ColorProvider } from "../../context/ColorContext";
 
 function App() {

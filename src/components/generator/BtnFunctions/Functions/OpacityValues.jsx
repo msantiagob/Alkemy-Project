@@ -1,17 +1,27 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
+import ColorContext from "../../../../context/ColorContext";
+
 export default function ValuesBar(){
+
     const[state,setState]=useState({
         price:1
     })
+    
+    const { handleChangeOpacity } = useContext(ColorContext);
+
     const hadleChange=(e)=>{
+        handleChangeOpacity(e)
         let newres= e.target.value
         setState({price:newres})
+
     }
+
+
     return(
         <Container>
         <label className="opaci">
-          Opacity{state.price / 10}
+          Opacity {state.price / 10}
           <input
           className="range-input"
             type="range"

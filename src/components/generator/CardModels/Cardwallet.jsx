@@ -6,14 +6,14 @@ import { useContext } from "react";
 
 export default function Wallet(){
 
-    const { bgColor,images, opacity,shadow } = useContext(ColorContext);
+    const { bgColor,images, opacity,shadow,borderStyle } = useContext(ColorContext);
 
     
     
     return(
-        <Container newBgColor={`${bgColor}`} shadowDisplay={shadow}>
+        <Container newBgColor={`${bgColor}`} shadowDisplay={shadow} newBorders={borderStyle}>
             <header>
-                {console.log(shadow)}
+                {console.log(borderStyle)}
                 <AddNewImage props={images}/>
             </header>
             <footer style={ { opacity: opacity} }>
@@ -43,19 +43,19 @@ export default function Wallet(){
 const Container=styled.article`
     width: 20%;
     height: 100%;
-    outline: 2px solid blue;
     margin-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    border: ${(props)=>props.newBorders.border === undefined ? '2px solid blue' : props.newBorders.border};
+    border-top: none;
+    border-bottom: none;
+    border-radius: 30px/90px;
     box-shadow: ${(props)=> props.shadowDisplay === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
- 
-   // border-radius: 0 10px 0 10px;
     footer{
         height:14.5rem;
         width: 84%;
-        //outline: 2px solid green;
         position: absolute;
         border-radius: 0 0 10px 10px;
         top: 40%;

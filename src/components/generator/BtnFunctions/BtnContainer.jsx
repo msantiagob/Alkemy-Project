@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import { useState,useEffect } from "react";
 import FontMenu from "./Functions/DropdownMenu";
 import ValuesBar from "./Functions/OpacityValues";
 import Trimmings from "./Functions/ImageShape";
 import ChekBack from "./Functions/BackgroundColors";
 import ChangePicture from "./Functions/ChangeProfileImg";
 import Shadow from "./Functions/ShadowEffect";
+import BorderStyles from "./Functions/BordersAndStyles";
 export default function GirdOfButtons(){
   return(
         <Cotnainer>
@@ -21,7 +21,7 @@ export default function GirdOfButtons(){
                    <ValuesBar/>
               </div>
               <div className="ftn-container">
-                bordes y estilos
+                <BorderStyles/>
               </div>
               <div className="ftn-container">
                 <Shadow/>

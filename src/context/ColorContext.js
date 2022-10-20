@@ -8,6 +8,7 @@ export function ColorProvider ( { children }) {
     const [bgColor, setBgColor] = useState('')
     const[shadow,setShadow]=useState(false)
     const [opacity, setOpacity] = useState(1);
+    const[borderStyle,setBorderStyle]=useState([])
     
     const handleBgColorChange = (e) => {
         let backgroundColor = e.currentTarget.value;
@@ -26,7 +27,7 @@ export function ColorProvider ( { children }) {
     } 
 
     return(
-        <ColorContext.Provider value={ {bgColor,shadow,setShadow,handleShadowChange,formImage,setFormImage, setBgColor, handleBgColorChange,images,setImages, opacity, handleChangeOpacity} }>     
+        <ColorContext.Provider value={ {borderStyle,setBorderStyle,bgColor,shadow,setShadow,handleShadowChange,formImage,setFormImage, setBgColor, handleBgColorChange,images,setImages, opacity, handleChangeOpacity} }>     
             { children }
         </ColorContext.Provider>
     )

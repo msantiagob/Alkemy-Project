@@ -5,14 +5,20 @@ export function ColorProvider ( { children }) {
 
     const[images,setImages]=useState([])
     const[formImage,setFormImage]=useState('')
-    const [bgColor, setBgColor] = useState('#FAFAFA');
-
+    const [bgColor, setBgColor] = useState('')
+    const[shadow,setShadow]=useState(false)
+    const [opacity, setOpacity] = useState(1);
+    
     const handleBgColorChange = (e) => {
         let backgroundColor = e.currentTarget.value;
         setBgColor(backgroundColor);
     }
+    const handleShadowChange = (e) => {
+        if(e === 'shadow'){
+            setShadow(!shadow)
+        }
+    }
     
-    const [opacity, setOpacity] = useState(1);
 
     const handleChangeOpacity = (e) =>{
         let currentOpacity = e.currentTarget.value / 10;
@@ -20,7 +26,7 @@ export function ColorProvider ( { children }) {
     } 
 
     return(
-        <ColorContext.Provider value={ {bgColor,formImage,setFormImage, setBgColor, handleBgColorChange,images,setImages, opacity, handleChangeOpacity} }>     
+        <ColorContext.Provider value={ {bgColor,shadow,setShadow,handleShadowChange,formImage,setFormImage, setBgColor, handleBgColorChange,images,setImages, opacity, handleChangeOpacity} }>     
             { children }
         </ColorContext.Provider>
     )

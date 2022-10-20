@@ -5,10 +5,8 @@ export default function AddNewImage({props}){
     const {formImage}=useContext(ColorContext)
     let arrSrc=[]
     let srcValids=arrSrc.concat(props[0],'https://rickandmortyapi.com/api/character/avatar/1.jpeg')
-    return(<>
+    return(
         <Photo alt="imagen" formadd={formImage} src={srcValids[0] === undefined ? srcValids[1] : srcValids[0]}  accept="image/jpeg, image/png"/>
-        {console.log(formImage)}
-        </>
     )
 }
 const Photo=styled.img`

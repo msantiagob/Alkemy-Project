@@ -5,6 +5,7 @@ import ValuesBar from "./Functions/OpacityValues";
 import Trimmings from "./Functions/ImageShape";
 import ChekBack from "./Functions/BackgroundColors";
 import ChangePicture from "./Functions/ChangeProfileImg";
+import Shadow from "./Functions/ShadowEffect";
 export default function GirdOfButtons(){
   return(
         <Cotnainer>
@@ -23,7 +24,7 @@ export default function GirdOfButtons(){
                 bordes y estilos
               </div>
               <div className="ftn-container">
-                Sombras para efectos 3D
+                <Shadow/>
               </div>
               <div className="ftn-container">
                 <Trimmings/>

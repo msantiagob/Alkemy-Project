@@ -1,10 +1,8 @@
-import { useState } from "react";
 import styled,{keyframes} from "styled-components";
 
 export default function Letters({ver}){
-    const[span,setSpan]=useState('#40ff00')
     return(
-        <Container variant={ver} cornerColor={`${span}`}>
+        <Container variant={ver}>
             <div className="corner"><span></span><span></span></div>
             <p className="effect">
                 Front-end Developer

@@ -4,7 +4,7 @@ const ColorContext = createContext();
 export function ColorProvider ( { children }) {
 
     const[images,setImages]=useState([])
-
+    const[formImage,setFormImage]=useState('')
     const [bgColor, setBgColor] = useState('#FAFAFA');
 
     const handleBgColorChange = (e) => {
@@ -20,7 +20,7 @@ export function ColorProvider ( { children }) {
     } 
 
     return(
-        <ColorContext.Provider value={ {bgColor, setBgColor, handleBgColorChange,images,setImages, opacity, handleChangeOpacity} }>     
+        <ColorContext.Provider value={ {bgColor,formImage,setFormImage, setBgColor, handleBgColorChange,images,setImages, opacity, handleChangeOpacity} }>     
             { children }
         </ColorContext.Provider>
     )

@@ -77,6 +77,8 @@ const Container=styled.article`
         width: 12rem;
       // outline: 2px solid red;                
         text-align: center;
+        color: black;
+        
     }
     .verticaldiv{       
         transform: rotate(90deg);

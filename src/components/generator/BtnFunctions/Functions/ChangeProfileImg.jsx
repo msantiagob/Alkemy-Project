@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ColorContext from "../../../../context/ColorContext";
 
 export default function ChangePicture(){
-    const { images,setImages } = useContext(ColorContext);
+    const { setImages } = useContext(ColorContext);
 
     const uploadPhoto=(file)=>{       
         const arr=Array.from(file) //por si quisiera subir mas de una foto aunque podria usar spred operator
@@ -14,10 +14,7 @@ export default function ChangePicture(){
         }
 
     return(
-
-        <Photo type='file' onChange={(e)=>uploadPhoto(e.target.files)} accept="image/jpeg, image/png"/>
-     
- 
+        <Photo type='file' onChange={(e)=>uploadPhoto(e.target.files)} accept="image/jpeg, image/png"/> 
     )
 }
 const Photo=styled.input`

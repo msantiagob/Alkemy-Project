@@ -1,9 +1,14 @@
 import styled from "styled-components";
+import { useContext } from "react";
+import ColorContext from "../../../../context/ColorContext";
 export default function Trimmings(){
+    const {setFormImage}=useContext(ColorContext)
+    const forms=['polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)','polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)','polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%)']
     return(<Container>
-        <button className="img-shape">triangulo</button>
-        <button className="img-shape">hexagono</button>
-        <button className="img-shape">estrella</button>
+        <button className="img-shape" onClick={()=>setFormImage(forms[0])}>triangulo</button>
+        <button className="img-shape" onClick={()=>setFormImage(forms[1])}>hexagono</button>
+        <button className="img-shape"onClick={()=>setFormImage(forms[2])}>estrella</button>
+        <button className="img-shape"onClick={()=>setFormImage('')}>limpiar</button>
     </Container>
         )
 }

@@ -6,7 +6,6 @@ import Trimmings from "./Functions/ImageShape";
 import ChekBack from "./Functions/BackgroundColors";
 import ChangePicture from "./Functions/ChangeProfileImg";
 export default function GirdOfButtons(){
-  const[imageProfile,setImageProfile]=useState('') 
   return(
         <Cotnainer>
               <div className="ftn-container">

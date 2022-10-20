@@ -6,14 +6,15 @@ import { useContext } from "react";
 
 export default function Wallet(){
 
-    const { bgColor } = useContext(ColorContext);
+    const { bgColor,images } = useContext(ColorContext);
 
-   
+    
     
     return(
         <Container newBgColor={`${bgColor}`}>
             <header>
-                <AddNewImage props='https://rickandmortyapi.com/api/character/avatar/1.jpeg'/>
+            
+                <AddNewImage props={images}/>
             </header>
             <footer >
                 <div className="positions">

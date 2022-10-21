@@ -105,6 +105,7 @@ const Container=styled.div`
     display: flex;
     justify-content: center;
     text-align: center;
+    transition: 8s;
     visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     .content-animation{
         height: 500px;
@@ -126,7 +127,6 @@ const Container=styled.div`
         position: relative;
         margin: 10px 0 25px 0;
         animation: ${animate} linear ${(props)=>props.timeLapse} infinite;
-       
         &::after {
             content: '';
             position: absolute;
@@ -144,7 +144,7 @@ const Container=styled.div`
         color: #fff;
   --_c: var(--c);
   --_p: 100%;
-  transition: 2.5s, color 2s 2.5s, background-color 2s 2.5s;
+  transition: 2.5s, color 2s 2.5s, background-color 4s 4s;
   }
   
 `

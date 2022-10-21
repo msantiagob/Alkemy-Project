@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import styled from "styled-components";
 import Bubble from "./Blubble";
 import ShakeIt from "./EarthQuake";
@@ -15,6 +15,15 @@ export default function Lauta (){
     const[corner,setCorner]=useState('')
     const[neon,setNeon]=useState('')
     const[booty,setBooty]=useState('')
+    const[allBubbles,setAllBubbles]=useState([])
+    const fetchingStyles=async ()=>{
+        fetch('http://localhost:3000/Bubbles.txt')
+        .then(res=>res.text())
+        .then(data=>setAllBubbles(data))
+    }
+    useEffect(()=>{
+        fetchingStyles()
+    },[show])
     function seeBubbles(){
         if(show === ''){
             setShow('yes')
@@ -81,8 +90,11 @@ export default function Lauta (){
             setBooty('')
         }
     }
-    return(<Example>
+
+    return(<Container>
+    <Example>
         <div className="ani-container">
+     
             <article className="info-container">
                 <header>Lautaro aniamciones </header>
                     <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt='imagen-de-muestra'/>
@@ -94,14 +106,15 @@ export default function Lauta (){
                     <button>2</button>
                     <button>3</button></footer>
             </article>
-        <Bubble ver={show}/>
+        <Bubble  ver={show}/>          
         <GradientMotion ver={gradient}/>
         <DotsRotation ver={dots} />
         <Loop ver={corner}/>
         <Letters ver={neon}/>
         <ShakeIt  ver={booty}/>
         </div>
-        <div className="btn-display">
+        <div  className="btn-display">
+   
         <button onClick={()=>seeBubbles()}>Burbujas </button>
         <button onClick={()=>seeGradient()}>Gradiente</button>
         <button onClick={()=>seeDots()}>Espiral</button>
@@ -111,13 +124,29 @@ export default function Lauta (){
         <button>3</button>
         <button>4</button>
         </div>
-    </Example>)
+    </Example>
+    <div className="code" >
+        {show === 'yes' ? allBubbles :null}
+    </div>
+    </Container>
+    )
 }
-
+const Container=styled.div`
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    width: 100%;
+    .code{
+        height: 100%;
+        width: 50%;
+       margin: auto;
+        outline: 2px solid blue;
+    }
+`
 const Example=styled.div`
     display: grid;
     overflow-y: hidden;
-    width: 100%;   
+    width: 700px;   
     height: 100vh;
     justify-content: center;   
     .ani-container{

@@ -9,9 +9,11 @@ export default function BorderStyles(){
         bottom: 'none',
         radius: '30px/90px',
     }
+    const none={}
     return (
         <Container>
             <button className="beer" onClick={()=>setBorderStyle(beerCan)}>Lata</button>
+            <button className="beer" onClick={()=>setBorderStyle(none)}>Limpiar</button>
         </Container>
     )
 }

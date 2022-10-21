@@ -48,10 +48,10 @@ const Container=styled.article`
     flex-direction: column;
     align-items: center;
     position: relative;
-    border: ${(props)=>props.newBorders.border === undefined ? '2px solid blue' : props.newBorders.border};
-    border-top: none;
-    border-bottom: none;
-    border-radius: 30px/90px;
+    border: ${(props)=>props.newBorders.border === undefined ? '4px solid blue' : props.newBorders.border};
+    border-top: ${(props)=>props.newBorders.top === undefined ? 'solid' : props.newBorders.top};
+    border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'solid' : props.newBorders.bottom};
+    border-radius:  ${(props)=>props.newBorders.radius === undefined ? 'none' : props.newBorders.radius};
     box-shadow: ${(props)=> props.shadowDisplay === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
     footer{
         height:14.5rem;

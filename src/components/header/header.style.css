@@ -1,0 +1,23 @@
+.navbar{
+    display: flex;
+    background-color: rgb(62, 62, 114);
+    color: white;
+    align-items: center;
+    padding: 15px 12px;
+}
+.navbar > span{
+    margin-right: auto;
+}
+
+.navbar--list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    padding: 12px 15px;
+    border: 1px solid white;
+}
+
+.navbar--list > li {
+    padding: 0 10px;
+}

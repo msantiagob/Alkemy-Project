@@ -27,8 +27,12 @@ export const Login = ()=> {
                     email:"",
                     password: "",
                 }}
-                onSubmit={ ()=> navigate('/') }
-                >
+                onSubmit={ ()=> 
+                    {
+                        localStorage.setItem("logged", "yes");
+                        navigate('/');
+                    } 
+                }>
                     {
                         ({touched, errors, onSubmit}) =>(
                             <Form className='auth'>

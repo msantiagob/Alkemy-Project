@@ -99,21 +99,7 @@ small {
     font-size: 80%;
 }
   
-sub,
-sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
   
-  sub {
-    bottom: -0.25em;
-  }
-  
-  sup {
-    top: -0.5em;
-  }
   
   audio,
   video {
@@ -202,17 +188,6 @@ sup {
     margin: 0 auto;
     width: 80%;
 }
-  /* .home--intro_container{
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    width: 80%;
-  } */
-
 .home--hero,
 .home--main{
     /* background-color: blue; */

@@ -136,6 +136,31 @@ export default function Lauta (){
         }
     }
 
+    const showCode = () =>{
+        // {show === 'yes' ? allBubbles :null}
+        // {moving === 'yes' ? quakeStyle :null}
+        // {gradient === 'yes' ? gradientStyle :null}
+        // {corner === 'yes' ? loopsStyle : null}
+        // {neon === 'yes' ? neonStyle : null}
+        // {dots === 'yes' ? spiralStyle : null}
+
+        if(show === 'yes'){
+            return allBubbles;
+        } else if(moving === 'yes'){
+            return quakeStyle;
+        } else if(gradient === 'yes' ){
+            return gradientStyle;
+        } else if( corner === 'yes'){
+            return loopsStyle;
+        } else if(neon === 'yes' ){
+            return neonStyle;
+        } else if( dots === 'yes'){
+            return spiralStyle;
+        } else{
+            return(<p>Elija una animación. Su código aparecerá aquí</p>)
+        }
+    }
+
     return(<Container>
     <Example>
         <div className="ani-container">
@@ -172,13 +197,13 @@ export default function Lauta (){
     </Example>
     <div className="code" >
         <div className="boxcode">
-        {show === 'yes' ? allBubbles :null}
+        {/* {show === 'yes' ? allBubbles :null}
         {moving === 'yes' ? quakeStyle :null}
         {gradient === 'yes' ? gradientStyle :null}
         {corner === 'yes' ? loopsStyle : null}
         {neon === 'yes' ? neonStyle : null}
-        {dots === 'yes' ? spiralStyle : null}
-        
+        {dots === 'yes' ? spiralStyle : null} */}
+        {showCode()}
         </div>
     </div>
     </Container>

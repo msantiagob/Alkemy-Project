@@ -19,6 +19,18 @@ export default function Lauta (){
     const[quakeStyle,setQuakeStyle]=useState([])
     const[gradientStyle,setGradientStyle]=useState([])
     const[loopsStyle,setLoopsStyle]=useState([])
+    const[neonStyle,setNeonStyle]=useState([])
+    const[spiralStyle,setSpiralStyle]=useState([])
+    const fetchingSpiralStyles =async()=>{
+        fetch('http://localhost:3000/Spiral.txt')
+        .then(res=>res.text())
+        .then(data=>setSpiralStyle(data))
+    }
+    const fetchingNeonStyles=async()=>{
+        fetch('http://localhost:3000/NeonLetters.txt')
+        .then(res=>res.text())
+        .then(data=>setNeonStyle(data))
+    }
     const fetchingBubbleStyles=async ()=>{
         fetch('http://localhost:3000/Bubbles.txt')
         .then(res=>res.text())
@@ -39,6 +51,12 @@ export default function Lauta (){
         .then(res=>res.text())
         .then(data=>setLoopsStyle(data))
     }
+    useEffect(()=>{
+        fetchingSpiralStyles()
+    },[dots])
+    useEffect(()=>{
+        fetchingNeonStyles()
+    },[neon])
     useEffect(()=>{
         fetchingLoopsStyles()
     },[corner])
@@ -158,6 +176,9 @@ export default function Lauta (){
         {moving === 'yes' ? quakeStyle :null}
         {gradient === 'yes' ? gradientStyle :null}
         {corner === 'yes' ? loopsStyle : null}
+        {neon === 'yes' ? neonStyle : null}
+        {dots === 'yes' ? spiralStyle : null}
+        
         </div>
     </div>
     </Container>

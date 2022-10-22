@@ -1,8 +1,5 @@
-import styled,{keyframes} from "styled-components";
-export default function DotsRotation ({ver}){
-    return(
-        <Container id="hola" variant={ver}>
-            <BackRotate>
+<div class='container'> 
+    <div class='order'>        
             <span></span>  
             <span></span>
             <span></span>
@@ -67,22 +64,16 @@ export default function DotsRotation ({ver}){
             <span></span>
             <span></span>
             <span></span>
-            </BackRotate>
-        </Container>
-    )
-}
-const Container=styled.div`
-     height: 500px;
+            </div>
+        </div>
+
+.container{
+    height: 500px;
     width: 400px;
-    position: absolute;
-    top: 0;
     filter: blur(3px);
-  
-    visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     overflow: hidden;
-    
-`
-const rotate=keyframes`
+    }
+@keyframes rotate{
        0% {
         background-position: 0% 10%;
       
@@ -95,8 +86,8 @@ const rotate=keyframes`
         background-position: 0% 10%;
        
     }
-`
-const BackRotate=styled.div`
+}
+.order{
     height: 500px;
     width: 500px;
     display: grid;
@@ -105,9 +96,9 @@ const BackRotate=styled.div`
     grid-template-rows:  repeat(8, 1fr);  
     background: linear-gradient(blue,red);
     animation: ${rotate}  ease 4s infinite;
-    background-size: 300% 300%;
+    background-size: 300% 300%;}
     
-    span{
+ span{
         height: 40px;
         width: 40px;
         background: transparent;
@@ -115,6 +106,4 @@ const BackRotate=styled.div`
         border-style: dashed;
         border-color:black ;
         border-radius: 50%;
-     
     }
-`

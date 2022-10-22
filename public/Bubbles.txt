@@ -1,27 +1,27 @@
-<div className="container">
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
+<div class="container">
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
 
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
 
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
 
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>
-            <div className="ball"></div>  
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>
+            <div class="ball"></div>  
 </div>
 @keyframes animate{
     0%{
@@ -50,7 +50,6 @@
     justify-content:space-between ;
     position: relative;    
     outline: 2px solid blue;
-    visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
 }
     .ball{
             width: 15px;

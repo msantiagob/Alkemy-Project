@@ -14,16 +14,43 @@ export default function Lauta (){
     const[dots,setDots]=useState('')
     const[corner,setCorner]=useState('')
     const[neon,setNeon]=useState('')
-    const[booty,setBooty]=useState('')
+    const[moving,setMoving]=useState('')
     const[allBubbles,setAllBubbles]=useState([])
-    const fetchingStyles=async ()=>{
+    const[quakeStyle,setQuakeStyle]=useState([])
+    const[gradientStyle,setGradientStyle]=useState([])
+    const[loopsStyle,setLoopsStyle]=useState([])
+    const fetchingBubbleStyles=async ()=>{
         fetch('http://localhost:3000/Bubbles.txt')
         .then(res=>res.text())
         .then(data=>setAllBubbles(data))
     }
+    const fetchingQuakeStyles=async()=>{
+        fetch('http://localhost:3000/EarthQuake.txt')
+        .then(res=>res.text())
+        .then(data=>setQuakeStyle(data))
+    }
+    const fetchingGradientStyles=async()=>{
+        fetch('http://localhost:3000/GradientMoves.txt')
+        .then(res=>res.text())
+        .then(data=>setGradientStyle(data))
+    }
+    const fetchingLoopsStyles=async()=>{
+        fetch('http://localhost:3000/LoopsUps.txt')
+        .then(res=>res.text())
+        .then(data=>setLoopsStyle(data))
+    }
     useEffect(()=>{
-        fetchingStyles()
+        fetchingLoopsStyles()
+    },[corner])
+    useEffect(()=>{
+        fetchingGradientStyles()
+    },[gradient])
+    useEffect(()=>{
+        fetchingBubbleStyles()
     },[show])
+    useEffect(()=>{
+        fetchingQuakeStyles()
+    },[moving])
     function seeBubbles(){
         if(show === ''){
             setShow('yes')
@@ -79,15 +106,15 @@ export default function Lauta (){
         }
     }
     function seeQuake(){
-        if( booty === ''){
+        if( moving === ''){
             setDots('')
             setGradient('')
             setShow('')
-            setBooty('yes')
+            setMoving('yes')
             setNeon('')
             setCorner('')
         }else{
-            setBooty('')
+            setMoving('')
         }
     }
 
@@ -111,7 +138,7 @@ export default function Lauta (){
         <DotsRotation ver={dots} />
         <Loop ver={corner}/>
         <Letters ver={neon}/>
-        <ShakeIt  ver={booty}/>
+        <ShakeIt  ver={moving}/>
         </div>
         <div  className="btn-display">
    
@@ -126,7 +153,12 @@ export default function Lauta (){
         </div>
     </Example>
     <div className="code" >
+        <div className="boxcode">
         {show === 'yes' ? allBubbles :null}
+        {moving === 'yes' ? quakeStyle :null}
+        {gradient === 'yes' ? gradientStyle :null}
+        {corner === 'yes' ? loopsStyle : null}
+        </div>
     </div>
     </Container>
     )
@@ -142,6 +174,12 @@ const Container=styled.div`
        margin: auto;
         outline: 2px solid blue;
     }
+    .boxcode{
+            margin-top: 10%;
+            width: 90%;
+            outline: 2px solid red;
+            color: blue;
+        }
 `
 const Example=styled.div`
     display: grid;

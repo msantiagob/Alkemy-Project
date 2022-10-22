@@ -1,17 +1,12 @@
-import styled,{keyframes} from "styled-components";
-
-export default function Letters({ver}){
-    return(
-        <Container variant={ver}>
-            <div className="corner"><span></span><span></span></div>
-            <p className="effect">
+ <div class='container'>
+            <div class="corner"><span></span><span></span></div>
+            <p class="effect">
                 Front-end Developer
             </p>
-            <div className="corner"><span></span><span></span></div>
-        </Container>
-    )
-}
-const refraction= keyframes`
+            <div class="corner"><span></span><span></span></div>
+        </div>
+
+@keyframes refraction{
     100%{
         text-shadow:
         0 0 4px #fff,
@@ -34,24 +29,23 @@ const refraction= keyframes`
       0 0 94px #bf00ff,
       0 0 140px #bf00ff;
     }
-`
+}
 
-const Container=styled.div`
+.container{
     height: 500px;
     width: 400px;
     display: grid;
     align-content: space-between;
     justify-content: space-between;
-    position: absolute;
     background: black;
     text-align: center;
-    visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
+    }
     .effect{       
         transform: rotateZ(-45deg);
         font-size: 80px;
         margin-left:5%;
         color: #fff;
-        animation:  ${refraction} 0.1s ease-in-out infinite alternate;
+        animation:  refraction 0.1s ease-in-out infinite alternate;
     }    
     span{
         width: 35px;
@@ -60,9 +54,9 @@ const Container=styled.div`
         border: none;
         background:radial-gradient(#40ff00, #000);
     }
-    .corner{
+  .corner{
         display: flex;
         justify-content: space-between;
         margin: 2%;
     }
-`
+        

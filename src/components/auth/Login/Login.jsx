@@ -9,15 +9,15 @@ export const Login = () => {
 
   const loginSchema = Yup.object().shape({
     email: Yup.string()
-      .required("*Email required")
-      .email("*Invaild email format."),
+      .required("*Campo requerido.")
+      .email("*Campo requerido."),
     password: Yup.string().required("*Password required."),
   });
 
   return (
     <div className="container">
       <div className="form-control">
-        <h2>Login</h2>
+        <h2>Iniciar Sesion</h2>
         <Formik
           validationSchema={loginSchema}
           initialValues={{
@@ -45,7 +45,7 @@ export const Login = () => {
                 )}
               </div>
               <div>
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">Contrasena:</label>
                 <Field
                   type="input"
                   name="password"
@@ -57,10 +57,10 @@ export const Login = () => {
                   <div className="errors">{errors.password}</div>
                 )}
               </div>
-              <button type="submit">Login</button>
+              <button type="submit">Iniciar sesion</button>
               <div>
-                <h6>Don't have an account?</h6>
-                <Link to="/register">Register Here</Link>
+                <h6>No tiene una cuenta?</h6>
+                <Link to="/register">Registrarse aqui</Link>
               </div>
             </Form>
           )}

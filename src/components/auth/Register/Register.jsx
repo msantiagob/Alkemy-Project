@@ -8,13 +8,13 @@ export const Register = ()=> {
 
     const RegisterSchema = Yup.object().shape({
         email: Yup.string()
-            .required('*Email required')
+            .required('*Campo requerido.')
             .email('*Invaild email format.'),
         password: Yup.string()
-            .required('*Password required.'),
+            .required('*Campo requerido.'),
         fullname: Yup.string()
-            .required('*Name required.')
-            .min(4, '*Name is too short.')
+            .required('*Campo requerido.')
+            .min(4, '*Campo requerido.')
     });
 
     return (
@@ -48,10 +48,10 @@ export const Register = ()=> {
                                     <Field type='input' name='password'  className={errors.password && touched.password ? "error-inputs" : ""} />
                                     {errors.password && touched.password && <div className='errors'>{errors.password}</div>}
                                 </div>
-                                <button type='submit'>Login</button>
+                                <button type='submit'>Registrarse</button>
                                 <div>
-                                    <h6>Already have an account?</h6>
-                                    <Link to='/login'>Login Here</Link>
+                                    <h6>Ya tiene una cuenta?</h6>
+                                    <Link to='/login'>Iniciar sesion</Link>
                                 </div>
                             </Form>
                         )

@@ -1,10 +1,11 @@
 import styled from "styled-components"
 import { useContext } from "react"
 import ColorContext from "../../../../context/ColorContext"
+import anonUser from "./images/anon-user.jpg"
 export default function AddNewImage({props}){
     const {formImage}=useContext(ColorContext)
     let arrSrc=[]
-    let srcValids=arrSrc.concat(props[0],'https://rickandmortyapi.com/api/character/avatar/1.jpeg')
+    let srcValids=arrSrc.concat(props[0],`${anonUser}`)
     return(
         <Photo alt="imagen" formadd={formImage} src={srcValids[0] === undefined ? srcValids[1] : srcValids[0]}  accept="image/jpeg, image/png"/>
     )

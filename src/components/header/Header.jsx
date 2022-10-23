@@ -12,6 +12,9 @@ export const Header = () => {
         <li>
           <Link to="/card-animada">Card animada</Link>
         </li>
+        <li>
+          <Link to="/log-out">Cerrar Sesion</Link>
+        </li>
       </ul>
     </nav>
   );

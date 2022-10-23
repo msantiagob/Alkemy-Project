@@ -14,10 +14,26 @@ export default function ChangePicture(){
         }
 
     return(
+        <Container>
+            <label>
+            <span className="click">subir foto aqui</span>
         <Photo type='file' onChange={(e)=>uploadPhoto(e.target.files)} accept="image/jpeg, image/png"/> 
+        </label>
+        </Container>
     )
 }
+const Container=styled.div`
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    .click{
+        cursor: pointer;
+        border: 2px solid blue;
+        padding: 3%;
+    }
+`
 const Photo=styled.input`
     width:  100%;
-    cursor: pointer;
+    display: none;
 `

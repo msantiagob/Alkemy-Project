@@ -197,12 +197,7 @@ export default function Lauta (){
     </Example>
     <div className="code" >
         <div className="boxcode">
-        {/* {show === 'yes' ? allBubbles :null}
-        {moving === 'yes' ? quakeStyle :null}
-        {gradient === 'yes' ? gradientStyle :null}
-        {corner === 'yes' ? loopsStyle : null}
-        {neon === 'yes' ? neonStyle : null}
-        {dots === 'yes' ? spiralStyle : null} */}
+        <h3 className="title">Etiquetas y Estilos</h3>
         {showCode()}
         </div>
     </div>
@@ -225,7 +220,12 @@ const Container=styled.div`
             width: 90%;
             outline: 2px solid red;
             color: blue;
+            box-shadow: inset 0px 0px 10px 0px black;
+            padding: 5px;
         }
+    .title{
+        margin-bottom: 1%;
+    }
 `
 const Example=styled.div`
     display: grid;

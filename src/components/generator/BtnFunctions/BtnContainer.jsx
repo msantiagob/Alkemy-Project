@@ -44,11 +44,14 @@ const Cotnainer=styled.div`
     outline: 2px solid blue;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    
     .ftn-container{
         outline: 2px solid black;
         width: 180px;
         height: 130px;
         text-align: center;
-       // margin: auto;
+        :hover{
+          box-shadow: inset 0 0 10px #f8a100;
+        }
     }
 `

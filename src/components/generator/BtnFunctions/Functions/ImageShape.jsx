@@ -22,4 +22,7 @@ const Container=styled.div`
         height: 24px;
         margin: auto;
     }
+    button{
+        cursor: pointer;
+    }
 `

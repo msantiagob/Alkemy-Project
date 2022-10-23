@@ -4,6 +4,7 @@
     color: white;
     align-items: center;
     padding: 15px 12px;
+    height: 8vh;
 }
 .navbar > h2{
     margin-right: auto;

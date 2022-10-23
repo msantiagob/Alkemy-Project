@@ -48,7 +48,7 @@ export const Register = ()=> {
                                     <Field type='input' name='password'  className={errors.password && touched.password ? "error-inputs" : ""} />
                                     {errors.password && touched.password && <div className='errors'>{errors.password}</div>}
                                 </div>
-                                <button type='submit'>Registrarse</button>
+                                <button type='submit' className='auth--btn'>Registrarse</button>
                                 <div>
                                     <h6>Ya tiene una cuenta?</h6>
                                     <Link to='/login'>Iniciar sesion</Link>

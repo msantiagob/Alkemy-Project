@@ -5,7 +5,7 @@
     align-items: center;
     padding: 15px 12px;
 }
-.navbar > span{
+.navbar > h2{
     margin-right: auto;
 }
 
@@ -20,4 +20,13 @@
 
 .navbar--list > li {
     padding: 0 10px;
+}
+
+.auth--btn{
+    background-color: rgb(101, 206, 101);
+    border: none;
+}
+
+.auth--btn:hover{
+    background-color: rgb(33, 107, 33);
 }

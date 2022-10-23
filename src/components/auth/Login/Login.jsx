@@ -57,7 +57,7 @@ export const Login = () => {
                   <div className="errors">{errors.password}</div>
                 )}
               </div>
-              <button type="submit">Iniciar sesion</button>
+              <button type="submit" className='auth--btn'>Iniciar sesion</button>
               <div>
                 <h6>No tiene una cuenta?</h6>
                 <Link to="/register">Registrarse aqui</Link>

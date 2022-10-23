@@ -216,6 +216,7 @@ const Container = styled.div`
   justify-content: space-around;
   height: 100vh;
   width: 100%;
+  background: #8888fc;
   .code {
     height: 100%;
     width: 50%;

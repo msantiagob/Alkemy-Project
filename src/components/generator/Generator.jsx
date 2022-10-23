@@ -29,6 +29,8 @@ const Container = styled.body`
     padding-top: 1%;
     background: none;
     color:#000000;
+    background: #8888fc;
+
 `
 
 const Cardplay=styled.header`

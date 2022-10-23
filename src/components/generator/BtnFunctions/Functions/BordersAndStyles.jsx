@@ -25,5 +25,6 @@ const Container=styled.div`
     .beer{
         width: 50px;
         margin: auto;
+        cursor: pointer;
     }
 `

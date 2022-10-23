@@ -15,15 +15,15 @@ export default function FontMenu(){
     )
 }
 const Container=styled.div`
-    margin:auto ;
-    width: 100px;
-    height: 80px;
+    width: 100%;
+    height: 100%;
     outline: 2px solid red;
     text-align: center;
     display: flex;
     justify-content: center;
     .content-opt{
         list-style-type: none;
+        margin: auto;
     }
     .options{        
         display: grid;
@@ -33,10 +33,12 @@ const Container=styled.div`
         font-size: 10px;
     }
     .btn-list{
-        border: none;
-        background: blue;
+        border: 1px solid black;
+        background: rgb(62, 62, 114);
         width: auto;
         color: white;
+        cursor: pointer;
+        border-radius: 2px;
     }
 `
 function List(props){
@@ -55,7 +57,7 @@ function ListProducts(props){
         })
     })
     return(
-        <li  className="options"><button className="btn-list"  onClick={()=>setOpen(!open)}>hola </button>
+        <li  className="options"><button className="btn-list"  onClick={()=>setOpen(!open)}>Tamaño de fuente </button>
             {open && props.children}
         </li>
     )

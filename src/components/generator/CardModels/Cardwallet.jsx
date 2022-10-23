@@ -12,8 +12,7 @@ export default function Wallet(){
     
     return(
         <Container newBgColor={`${bgColor}`} shadowDisplay={shadow} newBorders={borderStyle}>
-            <header>
-                {console.log(borderStyle)}
+            <header className="imageprofile">
                 <AddNewImage props={images}/>
             </header>
             <footer style={ { opacity: opacity} }>
@@ -48,6 +47,7 @@ const Container=styled.article`
     flex-direction: column;
     align-items: center;
     position: relative;
+    font-size: 15px;
     border: ${(props)=>props.newBorders.border === undefined ? '4px solid blue' : props.newBorders.border};
     border-top: ${(props)=>props.newBorders.top === undefined ? 'solid' : props.newBorders.top};
     border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'solid' : props.newBorders.bottom};
@@ -59,9 +59,11 @@ const Container=styled.article`
         position: absolute;
         border-radius: 0 0 10px 10px;
         top: 40%;
-        z-index: -1;
         background: ${(props)=>props.newBgColor === '' ? 'blue': props.newBgColor};
         padding-top: 35%;
+    }
+    .imageprofile{
+        z-index: 1;
     }
     .positions{
         display: flex;

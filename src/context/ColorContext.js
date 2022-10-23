@@ -10,6 +10,7 @@ export function ColorProvider ( { children }) {
     const [opacity, setOpacity] = useState(1);
     const[borderStyle,setBorderStyle]=useState([])
     
+    
     const handleBgColorChange = (e) => {
         let backgroundColor = e.currentTarget.value;
         setBgColor(backgroundColor);

@@ -6,12 +6,12 @@ import { useContext } from "react";
 
 export default function Wallet(){
 
-    const { bgColor,images, opacity,shadow,borderStyle } = useContext(ColorContext);
+    const { bgColor,images, opacity,shadow,borderStyle,fontSize } = useContext(ColorContext);
 
     
     
     return(
-        <Container newBgColor={`${bgColor}`} shadowDisplay={shadow} newBorders={borderStyle}>
+        <Container newBgColor={`${bgColor}`} shadowDisplay={shadow} newFontSize={fontSize} newBorders={borderStyle}>
             <header className="imageprofile">
                 <AddNewImage props={images}/>
             </header>
@@ -47,7 +47,7 @@ const Container=styled.article`
     flex-direction: column;
     align-items: center;
     position: relative;
-    font-size: 15px;
+    font-size: ${(props)=>props.newFontSize === '' ? '15px' : props.newFontSize};
     border: ${(props)=>props.newBorders.border === undefined ? '4px solid blue' : props.newBorders.border};
     border-top: ${(props)=>props.newBorders.top === undefined ? 'solid' : props.newBorders.top};
     border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'solid' : props.newBorders.bottom};

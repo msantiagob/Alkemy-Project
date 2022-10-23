@@ -1,14 +1,15 @@
 import styled from "styled-components";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext } from "react";
+import ColorContext from "../../../../context/ColorContext";
 export default function FontMenu(){
-
+const {setFontSize}=useContext(ColorContext)
     return(
         <Container>
             <List>
                <ListProducts >
-                   <button>font 24</button>
-                   <button>font 24</button>
-                   <button>font 24</button>
+                   <button onClick={()=>setFontSize('14px')}>font 14</button>
+                   <button onClick={()=>setFontSize('16px')}>font 16</button>
+                   <button onClick={()=>setFontSize('18px')}>font 18</button>
                </ListProducts>
             </List>
         </Container>
@@ -51,11 +52,7 @@ function List(props){
 function ListProducts(props){
    
     const[open,setOpen]=useState(false)
-    useEffect(()=>{
-        document.addEventListener('mousedown',()=>{
-            setOpen(false)
-        })
-    })
+   
     return(
         <li  className="options"><button className="btn-list"  onClick={()=>setOpen(!open)}>Tamaño de fuente </button>
             {open && props.children}

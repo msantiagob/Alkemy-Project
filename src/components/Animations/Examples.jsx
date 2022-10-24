@@ -225,12 +225,22 @@ const Container = styled.div`
   .boxcode {
     margin-top: 4%;
     width: 90%;
-    outline: 2px solid red;
+    outline: 2px solid #3e3e72;
     color: #000000;
     box-shadow: inset 0px 0px 10px 0px #fff;
     padding: 5px;
     overflow-y: scroll;
     max-height: 80vh;
+    ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #3e3e72e8;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: #fff;
+            border-radius: 100vw;
+        }
   }
   .title {
     margin-bottom: 1%;

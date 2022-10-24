@@ -123,11 +123,32 @@ const Container=styled.div`
         border: 2px solid #3e3e72;
         width: 450px;
         overflow-y: scroll;
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #3e3e72e8;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: #fff;
+            border-radius: 100vw;
+        }
     }
     .stylecode{
         height: 100%;
         border: 2px solid #3e3e72;
         width: 450px;
         overflow-y: scroll;
+        ::-webkit-scrollbar{
+            width: 10px;
+            height: 10px;
+        }
+        ::-webkit-scrollbar-track{
+            background: #3e3e72e8;
+        }
+        ::-webkit-scrollbar-thumb{
+            background: #fff;
+            border-radius: 100vw;
+        }
     }
 `

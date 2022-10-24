@@ -72,15 +72,13 @@ export default function DotsRotation ({ver}){
     )
 }
 const Container=styled.div`
-     height: 500px;
+    height: 500px;
     width: 400px;
     position: absolute;
     top: 0;
     filter: blur(3px);
-  
     visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     overflow: hidden;
-    
 `
 const rotate=keyframes`
        0% {
@@ -106,7 +104,6 @@ const BackRotate=styled.div`
     background: linear-gradient(blue,red);
     animation: ${rotate}  ease 4s infinite;
     background-size: 300% 300%;
-    
     span{
         height: 40px;
         width: 40px;

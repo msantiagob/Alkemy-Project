@@ -10,10 +10,10 @@ export const Header = () => {
           <Link to="/">Card</Link>
         </li>
         <li>
-          <Link to="/card-animada">Card animada</Link>
+          <Link to="/card-animada">Fondo animado</Link>
         </li>
         <li>
-          <Link to="/log-out">Cerrar Sesion</Link>
+          <Link to="/log-out" className="link">Cerrar Sesion</Link>
         </li>
       </ul>
     </nav>

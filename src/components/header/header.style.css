@@ -1,14 +1,15 @@
 .navbar{
     display: flex;
-    background-color: rgb(62, 62, 114);
-    color: white;
+    background-color: #3e3e72;
     align-items: center;
     padding: 15px 12px;
     height: 8vh;
 }
 .navbar > h2{
     margin-right: auto;
+    color: #fff;
 }
+
 
 .navbar--list{
     display: flex;
@@ -17,9 +18,14 @@
     list-style-type: none;
     padding: 12px 15px;
 }
-
+li>a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+}
 .navbar--list > li {
     padding: 0 10px;
+
 }
 
 .auth--btn{
@@ -28,5 +34,6 @@
 }
 
 .auth--btn:hover{
-    background-color: rgb(33, 107, 33);
+    background-color: rgba(33, 107, 33, 0.862);
+    cursor: pointer;
 }

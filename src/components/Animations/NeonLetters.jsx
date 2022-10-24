@@ -48,7 +48,7 @@ const Container=styled.div`
     visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     .effect{       
         transform: rotateZ(-45deg);
-        font-size: 80px;
+        font-size: 60px;
         margin-left:5%;
         color: #fff;
         animation:  ${refraction} 0.1s ease-in-out infinite alternate;

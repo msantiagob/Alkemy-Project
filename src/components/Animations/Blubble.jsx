@@ -56,7 +56,7 @@ const Container = styled.div`
     display: flex;
     justify-content:space-between ;
     position: relative;    
-    outline: 2px solid blue;
+    border: 2px solid #fff;
     visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     .ball{
             width: 15px;

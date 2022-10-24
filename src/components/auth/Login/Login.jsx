@@ -1,6 +1,5 @@
 import "../auth.style.css";
-
-import { Formik, Form, Field, validateYupSchema, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -17,7 +16,7 @@ export const Login = () => {
   return (
     <div className="container">
       <div className="form-control">
-        <h2>Iniciar Sesion</h2>
+        <h2>Ingresa con tu cuenta</h2>
         <Formik
           validationSchema={loginSchema}
           initialValues={{
@@ -47,7 +46,7 @@ export const Login = () => {
               <div>
                 <label htmlFor="password">Contrasena:</label>
                 <Field
-                  type="input"
+                  type="password"
                   name="password"
                   className={
                     errors.password && touched.password ? "error-inputs" : ""

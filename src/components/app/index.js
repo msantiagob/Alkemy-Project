@@ -1,7 +1,6 @@
 import "./style.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Generator from "../generator/Generator";
-import { Home } from "../Home/Home";
 import { Login } from "../auth/Login/Login";
 import { LogOut } from "../auth/LogOut/LogOut";
 import { Register } from "../auth/Register/Register";
@@ -37,7 +36,7 @@ function App() {
               </RequireAuth>
             }
           />
-          <Route path="/home" element={<Home />} />
+        
           <Route path="/login" element={<Login />} />
           <Route path="/log-out" element={<LogOut />} />
           <Route path="/register" element={<Register />} />

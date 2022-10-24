@@ -166,7 +166,7 @@ export default function Model() {
       <Example>
         <div className="ani-container">
           <article className="info-container">
-            <header>Lautaro animaciones </header>
+            <header>Animaciones de fondo </header>
             <img
               src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
               alt="imagen-de-muestra"
@@ -174,8 +174,8 @@ export default function Model() {
             <hr />
             <div className="text-description">
               <p>
-                Desarrollador de aplicaciones Front-end con mas de 1 año de
-                experiencia
+                Desarrollamos las animaciones de aplicaciones Front-end con el fin
+                de hacer mas agradable la experiencia visual de tu portafolio personal
               </p>
             </div>
             <footer className="social-media">
@@ -223,12 +223,14 @@ const Container = styled.div`
     margin: auto;
   }
   .boxcode {
-    margin-top: 10%;
+    margin-top: 4%;
     width: 90%;
     outline: 2px solid red;
     color: #000000;
     box-shadow: inset 0px 0px 10px 0px #fff;
     padding: 5px;
+    overflow-y: scroll;
+    max-height: 80vh;
   }
   .title {
     margin-bottom: 1%;
@@ -271,6 +273,7 @@ const Example = styled.div`
         width: 200px;
         height: 80px;
         margin-left: 8%;
+        font-size: 14px;
       }
       hr {
         background: linear-gradient(90deg, red, blue);
@@ -286,7 +289,6 @@ const Example = styled.div`
         margin-left: 5%;
       }
       header {
-        // outline: 2px solid black;
         width: 200px;
         height: 30px;
         margin-left: 10%;
@@ -299,7 +301,6 @@ const Example = styled.div`
       .social-media {
         height: 50px;
         width: 120px;
-        // outline: 2px solid black;
         margin-top: auto;
         margin-left: 14%;
         display: flex;
@@ -318,7 +319,7 @@ const Example = styled.div`
   }
   .btn-display {
     width: 400px;
-    outline: 2px solid blue;
+    border: 2px solid #3e3e72;
     height: 100px;
     display: grid;
     margin: auto;
@@ -327,8 +328,14 @@ const Example = styled.div`
     button {
       margin-top: 8%;
       margin-left: 10%;
+      width: 68px;
       height: 24px;
-      width: 70px;
+      margin: auto;
+      background: #3e3e72;
+      color: #fff;
+      border: none;
+      border-radius:5px;
+      cursor: pointer;
     }
   }
 `;

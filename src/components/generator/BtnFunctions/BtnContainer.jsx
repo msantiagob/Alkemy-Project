@@ -41,12 +41,12 @@ export default function GirdOfButtons(){
 const Cotnainer=styled.div`
      width: 40%;
     height: 100%;
-    outline: 2px solid blue;
+    border: 2px solid #3e3e72;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     .ftn-container{
         outline: 2px solid black;
-        width: 180px;
+        width: 178px;
         height: 130px;
         text-align: center;
         :hover{

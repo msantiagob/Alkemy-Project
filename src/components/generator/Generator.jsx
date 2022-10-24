@@ -36,13 +36,12 @@ const Container = styled.body`
 
 const Cardplay=styled.header`
   width: 100%;
-  outline: 2px solid red;
   height: 60vh;
   display: flex;
   justify-content: space-around;
 `
 const Codeplay=styled.footer`
   width: 100%;
-  outline: 2px solid red;
+  margin-top: 1%;
   height: 35vh;
 `

@@ -1,7 +1,11 @@
 import styled from "styled-components"
+import { useContext } from "react"
+import ColorContext from "../../../context/ColorContext"
 export default function MyCode(){
+    const {fontSize,borderStyle,shadow,bgColor,opacity,formImage}=useContext(ColorContext)
+
     return(
-        <Container>
+        <Container >
             <div className="htmltags">
           <pre>
            {`
@@ -36,21 +40,71 @@ export default function MyCode(){
           </div>
           <div className="stylecode">
             <pre>
-                {`
-                        .container{
-                            width: 300px;
-                            height: 200px;
-                            margin-left: 5%;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            position: relative;
-                            font-size: ${(props)=>props.newFontSize === '' ? '15px' : props.newFontSize};
-                            border: ${(props)=>props.newBorders.border === undefined ? '4px solid blue' : props.newBorders.border};
-                            border-top: ${(props)=>props.newBorders.top === undefined ? 'solid' : props.newBorders.top};
-                            border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'solid' : props.newBorders.bottom};
- border-radius:  ${(props)=>props.newBorders.radius === undefined ? 'none' : props.newBorders.radius};
- box-shadow: ${(props)=> props.shadowDisplay === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
+{`
+    .container{
+    width: 300px;
+    height: 200px;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    font-size: ${fontSize === '' ? '15px' : fontSize};
+    border: ${borderStyle.border === undefined ? '4px solid blue' : borderStyle.border};
+    border-top: ${borderStyle.top === undefined ? 'solid' : borderStyle.top};
+    border-bottom:  ${borderStyle.bottom === undefined ? 'solid' : borderStyle.bottom};
+    border-radius:  ${borderStyle.radius === undefined ? 'none' : borderStyle.radius};
+    box-shadow: ${shadow === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
+    }
+    footer{
+        height:14.5rem;
+        width: 84%;
+        position: absolute;
+        border-radius: 0 0 10px 10px;
+        top: 40%;
+        background: ${bgColor === '' ? 'blue': bgColor};
+        padding-top: 35%;
+        opacity: ${opacity} ;
+    }
+    .imageprofile{
+        z-index: 1;
+    }
+    img{
+        height: 15.1rem;
+        width: 15.1rem;
+        clip-path: ${formImage === '' ? 'circle(50% at 50% 50%)' : formImage} ;
+    }
+    .positions{
+        display: flex;
+        flex-direction: column;
+    }    
+    .description{
+        height: 40px;
+        width: 100%;
+        display: flex;  
+        justify-content: space-between;
+    
+    }
+    .profileinfo{
+        height: 2rem;
+        width: 12rem;              
+        text-align: center;
+        color: black;
+        
+    }
+    .verticaldiv{       
+        transform: rotate(90deg);
+        height: 1px;
+        width: 19%;
+        border: none;
+        margin-top: 5%;
+        background: #fff;
+        }
+    .line{
+        border: none;
+        height: 1px;       
+        margin-bottom: 2%;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 253, 253, 0.75), rgba(0, 0, 0, 0));
     }
                 `}
             </pre>
@@ -66,15 +120,14 @@ const Container=styled.div`
     display:flex;
     .htmltags{
         height: 100%;
-        outline: 2px solid red;
+        border: 2px solid #3e3e72;
         width: 450px;
         overflow-y: scroll;
     }
     .stylecode{
         height: 100%;
-        outline: 2px solid red;
+        border: 2px solid #3e3e72;
         width: 450px;
         overflow-y: scroll;
-
     }
 `

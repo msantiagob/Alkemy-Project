@@ -29,8 +29,9 @@ const Container=styled.div`
     align-items: center;
     .click{
         cursor: pointer;
-        border: 2px solid blue;
+        border: 2px solid #3e3e72;
         padding: 3%;
+        color: #fff;
     }
 `
 const Photo=styled.input`

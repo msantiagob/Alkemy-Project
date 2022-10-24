@@ -18,11 +18,13 @@ const Container=styled.div`
     display: grid;
     align-items: center;
     .img-shape{
-        width: 60px;
+        width: 65px;
         height: 24px;
         margin: auto;
-    }
-    button{
+        background: #3e3e72;
+        color: #fff;
+        border: none;
+        border-radius:5px;
         cursor: pointer;
     }
 `

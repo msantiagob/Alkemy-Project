@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useState,useEffect,useContext } from "react";
+import { useState,useContext } from "react";
 import ColorContext from "../../../../context/ColorContext";
 export default function FontMenu(){
 const {setFontSize}=useContext(ColorContext)
@@ -7,9 +7,9 @@ const {setFontSize}=useContext(ColorContext)
         <Container>
             <List>
                <ListProducts >
-                   <button onClick={()=>setFontSize('14px')}>font 14</button>
-                   <button onClick={()=>setFontSize('16px')}>font 16</button>
-                   <button onClick={()=>setFontSize('18px')}>font 18</button>
+                   <button className="eachfont" onClick={()=>setFontSize('14px')}>font 14</button>
+                   <button className="eachfont" onClick={()=>setFontSize('16px')}>font 16</button>
+                   <button className="eachfont" onClick={()=>setFontSize('18px')}>font 18</button>
                </ListProducts>
             </List>
         </Container>
@@ -39,7 +39,15 @@ const Container=styled.div`
         width: auto;
         color: white;
         cursor: pointer;
-        border-radius: 2px;
+        border-radius: 2px;   
+    }
+    .eachfont{
+        border: none;
+        background: #d4d4fe;
+        :hover{
+            color: white;
+            background: #3e3e72;
+        }
     }
 `
 function List(props){

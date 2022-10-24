@@ -5,8 +5,8 @@ export default function Shadow(){
     const {shadow,handleShadowChange}=useContext(ColorContext)
     return(
         <Container>
-            <div>
-                <label>Sombra</label>
+            <div className="titlecheck">
+                <label >Sombra</label>
                 <input type='checkbox' checked={shadow} onChange={()=>handleShadowChange('shadow')} />
             </div>
         </Container>
@@ -19,7 +19,12 @@ const Container=styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .titlecheck{
+        height: 24px;
+        width: 80px;
+    }
     input{
+        margin-left: 8px;
         cursor: pointer;
     }
 `

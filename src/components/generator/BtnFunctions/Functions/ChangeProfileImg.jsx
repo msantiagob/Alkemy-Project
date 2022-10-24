@@ -16,7 +16,7 @@ export default function ChangePicture(){
     return(
         <Container>
             <label>
-            <span className="click">subir foto aqui</span>
+            <span className="click">Subir foto aqui</span>
         <Photo type='file' onChange={(e)=>uploadPhoto(e.target.files)} accept="image/jpeg, image/png"/> 
         </label>
         </Container>

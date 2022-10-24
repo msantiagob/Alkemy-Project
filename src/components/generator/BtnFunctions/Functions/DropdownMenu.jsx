@@ -21,6 +21,7 @@ const Container=styled.div`
     outline: 2px solid red;
     text-align: center;
     display: flex;
+    
     justify-content: center;
     .content-opt{
         list-style-type: none;
@@ -39,7 +40,8 @@ const Container=styled.div`
         width: auto;
         color: white;
         cursor: pointer;
-        border-radius: 2px;   
+        border-radius: 2px;
+        padding: 8px 5px;   
     }
     .eachfont{
         border: none;

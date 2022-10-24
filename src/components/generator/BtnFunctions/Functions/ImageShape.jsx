@@ -7,7 +7,7 @@ export default function Trimmings(){
     return(<Container>
         <button className="img-shape" onClick={()=>setFormImage(forms[0])}>Estrella</button>
         <button className="img-shape" onClick={()=>setFormImage(forms[1])}>Octagono</button>
-        <button className="img-shape"onClick={()=>setFormImage(forms[2])}>Raro</button>
+        <button className="img-shape"onClick={()=>setFormImage(forms[2])}>Cruz</button>
         <button className="img-shape"onClick={()=>setFormImage('')}>Circulo</button>
     </Container>
         )
@@ -17,6 +17,7 @@ const Container=styled.div`
     height: 100%;
     display: grid;
     align-items: center;
+    
     .img-shape{
         width: 65px;
         height: 24px;

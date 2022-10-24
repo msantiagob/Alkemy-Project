@@ -11,7 +11,7 @@ export const Login = () => {
     email: Yup.string()
       .required("*Campo requerido.")
       .email("*Campo requerido."),
-    password: Yup.string().required("*Password required."),
+    password: Yup.string().required("*Campo requerido."),
   });
 
   return (

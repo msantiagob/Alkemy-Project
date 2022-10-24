@@ -2,10 +2,11 @@ import '../auth.style.css';
 import * as Yup from 'yup';
 import { Formik, Field, Form } from 'formik';
 import { Link, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 export const Register = ()=> {
 
-
+    const navigate = useNavigate()
     const RegisterSchema = Yup.object().shape({
         email: Yup.string()
             .required('*Campo requerido.')
@@ -28,7 +29,17 @@ export const Register = ()=> {
                     email:"",
                     password: "",
                 }}
-                onSubmit={ (values)=> console.log(values)}
+                onSubmit={ ()=>{
+                    
+                    Swal.fire({
+                        title:"Registrado",
+                        text:"Seras loggeado automaticamente",
+                        icon:"success",
+                    })
+                    localStorage.setItem("logged", "yes")
+                    navigate("/")
+
+                }}
                 >
                     {
                         ({touched, errors, onSubmit}) =>(

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import GirdOfButtons from "./BtnFunctions/BtnContainer";
 import Wallet from "./CardModels/Cardwallet";
+import MyCode from "./CardsCode/CodeGenerated";
 
 
 
@@ -14,7 +15,7 @@ export default function Generator(){
         <GirdOfButtons/>
       </Cardplay>
       <Codeplay>
-      codigo
+      <MyCode/>
       </Codeplay>
     </Container>
   );

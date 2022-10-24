@@ -78,8 +78,7 @@ const Container=styled.article`
     }
     .profileinfo{
         height: 2rem;
-        width: 12rem;
-      // outline: 2px solid red;                
+        width: 12rem;              
         text-align: center;
         color: black;
         

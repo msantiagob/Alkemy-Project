@@ -21,7 +21,7 @@ const Container=styled.div`
     align-items: center;
     .titlecheck{
         height: 24px;
-        width: 80px;
+        width: 100px;
     }
     input{
         margin-left: 8px;

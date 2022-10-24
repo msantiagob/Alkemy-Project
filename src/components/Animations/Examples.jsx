@@ -221,14 +221,13 @@ const Container = styled.div`
     height: 100%;
     width: 50%;
     margin: auto;
-    outline: 2px solid blue;
   }
   .boxcode {
     margin-top: 10%;
     width: 90%;
     outline: 2px solid red;
-    color: blue;
-    box-shadow: inset 0px 0px 10px 0px black;
+    color: #000000;
+    box-shadow: inset 0px 0px 10px 0px #fff;
     padding: 5px;
   }
   .title {

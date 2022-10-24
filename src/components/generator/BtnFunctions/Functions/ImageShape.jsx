@@ -19,7 +19,7 @@ const Container=styled.div`
     align-items: center;
     
     .img-shape{
-        width: 65px;
+        width: 72px;
         height: 24px;
         margin: auto;
         background: #3e3e72;

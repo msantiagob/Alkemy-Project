@@ -4,37 +4,44 @@ import ColorContext from "../../../context/ColorContext"
 export default function MyCode(){
     const {fontSize,borderStyle,shadow,bgColor,opacity,formImage}=useContext(ColorContext)
 
+    /*const copyToClipboard = ()=>{
+        const codeCard = document.getElementById("codeCard")
+        console.log({codeCard})
+    }
+    copyToClipboard()
+    */
+
     return(
         <Container >
             <div className="htmltags">
-          <pre>
+          <pre id="codeCard">
            {`
              <div class='container'>
-             <header className="imageprofile">
-                 <img src='' alt=''/>
-             </header>
-             <footer >
-                 <div class="positions">
-                 <div class="description">
-                 <div class="profileinfo"> nombre</div>
-                     <hr class="verticaldiv"/>
-                 <div class="profileinfo"> apellido</div>
-                 </div>
-                 <hr class="line"/>    
-                 <div class="description">
-                 <div class="profileinfo"> nombre</div>
-                     <hr class="verticaldiv"/>
-                 <div class="profileinfo"> apellido</div>
-                 </div>
-                 <hr class="line"/>
-                 <div class="description">
-                 <div class="profileinfo"> nombre</div>
-                     <hr class="verticaldiv"/>
-                 <div class="profileinfo"> apellido</div>
-                 </div>
-                 </div>
-             </footer>
-         </div>
+                <header className="imageprofile">
+                    <img src='' alt=''/>
+                </header>
+                <footer >
+                    <div class="positions">
+                    <div class="description">
+                    <div class="profileinfo"> nombre</div>
+                        <hr class="verticaldiv"/>
+                    <div class="profileinfo"> apellido</div>
+                    </div>
+                    <hr class="line"/>    
+                    <div class="description">
+                    <div class="profileinfo"> nombre</div>
+                        <hr class="verticaldiv"/>
+                    <div class="profileinfo"> apellido</div>
+                    </div>
+                    <hr class="line"/>
+                    <div class="description">
+                    <div class="profileinfo"> nombre</div>
+                        <hr class="verticaldiv"/>
+                    <div class="profileinfo"> apellido</div>
+                    </div>
+                    </div>
+                </footer>
+             </div>
            `}
           </pre>
           </div>

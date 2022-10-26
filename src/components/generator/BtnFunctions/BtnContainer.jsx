@@ -41,7 +41,6 @@ export default function GirdOfButtons(){
 const Cotnainer=styled.div`
      width: 40%;
     height: 100%;
-    border: 2px solid #3e3e72;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     .ftn-container{

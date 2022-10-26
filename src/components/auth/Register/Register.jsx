@@ -33,11 +33,10 @@ export const Register = ()=> {
                     
                     Swal.fire({
                         title:"Registrado",
-                        text:"Seras loggeado automaticamente",
+                        text:"Por favor inicia sesion",
                         icon:"success",
                     })
-                    localStorage.setItem("logged", "yes")
-                    navigate("/")
+                    navigate("/login")
 
                 }}
                 >
@@ -56,7 +55,7 @@ export const Register = ()=> {
                                 </div>
                                 <div>
                                     <label htmlFor='password'>Contrasena:</label>
-                                    <Field type='input' name='password'  className={errors.password && touched.password ? "error-inputs" : ""} />
+                                    <Field type='password' name='password'  className={errors.password && touched.password ? "error-inputs" : ""} />
                                     {errors.password && touched.password && <div className='errors'>{errors.password}</div>}
                                 </div>
                                 <button type='submit' className='auth--btn'>Registrarse</button>

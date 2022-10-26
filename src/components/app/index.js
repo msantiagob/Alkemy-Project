@@ -1,4 +1,5 @@
 import "./style.css";
+import {useEffect, useState} from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Generator from "../generator/Generator";
 import { Login } from "../auth/Login/Login";
@@ -9,16 +10,20 @@ import { ColorProvider } from "../../context/ColorContext";
 import { Header } from "../header/Header";
 
 function App() {
+
+  const [isLogged, setIsLogged] = useState(false);
+
   const RequireAuth = ({ children }) => {
     if (!localStorage.getItem("logged")) {
       return <Navigate to="/login" replace={true} />;
     }
     return children;
   };
+
   return (
     <ColorProvider>
       <BrowserRouter>
-        <Header />
+        {isLogged === true ? <Header/> : null}
         <Routes>
           <Route
             path="/"
@@ -37,8 +42,8 @@ function App() {
             }
           />
         
-          <Route path="/login" element={<Login />} />
-          <Route path="/log-out" element={<LogOut />} />
+          <Route path="/login" element={<Login setIsLogged={setIsLogged}/>} />
+          <Route path="/log-out" element={<LogOut setIsLogged={setIsLogged} />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>

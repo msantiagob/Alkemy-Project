@@ -3,7 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 
-export const Login = () => {
+export const Login = ( {setIsLogged}) => {
   const navigate = useNavigate();
 
   const loginSchema = Yup.object().shape({
@@ -25,6 +25,7 @@ export const Login = () => {
           }}
           onSubmit={() => {
             localStorage.setItem("logged", "yes");
+            setIsLogged(true);
             navigate("/");
           }}
         >

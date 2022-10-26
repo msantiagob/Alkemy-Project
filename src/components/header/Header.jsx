@@ -1,7 +1,7 @@
 import "./header.style.css";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export const Header = (props) => {
   return (
     <nav className="navbar">
       <h2>Crea tu Card</h2>

@@ -1,5 +1,5 @@
 import "./style.css";
-import {useEffect, useState} from 'react'
+import {useState} from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Generator from "../generator/Generator";
 import { Login } from "../auth/Login/Login";

@@ -43,6 +43,7 @@ const Cotnainer=styled.div`
     height: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     .ftn-container{
         outline: 2px solid black;
         width: 178px;

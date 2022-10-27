@@ -23,7 +23,7 @@ export default function Generator(){
 
 
 
-const Container = styled.body`
+const Container = styled.div`
     display:  grid;    
     height: 100vh;
     width: auto;

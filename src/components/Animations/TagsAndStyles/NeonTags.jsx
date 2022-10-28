@@ -1,4 +1,10 @@
- <div class='container'>
+export default function TagsforNeon(){
+    return (
+        <div>
+            <pre>
+        {
+            `
+            <div class='container'>
             <div class="corner"><span></span><span></span></div>
             <p class="effect">
                 Front-end Developer
@@ -60,3 +66,9 @@
         margin: 2%;
     }
         
+            `
+        }   
+            </pre>
+        </div>
+    )
+}

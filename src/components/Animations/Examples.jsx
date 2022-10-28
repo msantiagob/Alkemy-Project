@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Bubble from "./Blubble";
 import ShakeIt from "./EarthQuake";
@@ -6,6 +6,12 @@ import GradientMotion from "./GradientMoves";
 import Loop from "./LoopsUps";
 import Letters from "./NeonLetters";
 import DotsRotation from "./Spiral";
+import TagsforBubbles from "./TagsAndStyles/BubbleTags";
+import TagsforEarthQuake from "./TagsAndStyles/EarthQuakeTags";
+import TagsforGradient from "./TagsAndStyles/GradientTags";
+import TagsforLoops from "./TagsAndStyles/LoopsTags";
+import TagsforNeon from "./TagsAndStyles/NeonTags";
+import TagsforSpiral from "./TagsAndStyles/SpiralTags";
 
 export default function Model() {
   const [show, setShow] = useState("");
@@ -14,60 +20,7 @@ export default function Model() {
   const [corner, setCorner] = useState("");
   const [neon, setNeon] = useState("");
   const [moving, setMoving] = useState("");
-  const [allBubbles, setAllBubbles] = useState([]);
-  const [quakeStyle, setQuakeStyle] = useState([]);
-  const [gradientStyle, setGradientStyle] = useState([]);
-  const [loopsStyle, setLoopsStyle] = useState([]);
-  const [neonStyle, setNeonStyle] = useState([]);
-  const [spiralStyle, setSpiralStyle] = useState([]);
-  const fetchingSpiralStyles = async () => {
-    fetch("http://localhost:3000/Spiral.txt")
-      .then((res) => res.text())
-      .then((data) => setSpiralStyle(data));
-  };
-  const fetchingNeonStyles = async () => {
-    fetch("http://localhost:3000/NeonLetters.txt")
-      .then((res) => res.text())
-      .then((data) => setNeonStyle(data));
-  };
-  const fetchingBubbleStyles = async () => {
-    fetch("http://localhost:3000/Bubbles.txt")
-      .then((res) => res.text())
-      .then((data) => setAllBubbles(data));
-  };
-  const fetchingQuakeStyles = async () => {
-    fetch("http://localhost:3000/EarthQuake.txt")
-      .then((res) => res.text())
-      .then((data) => setQuakeStyle(data));
-  };
-  const fetchingGradientStyles = async () => {
-    fetch("http://localhost:3000/GradientMoves.txt")
-      .then((res) => res.text())
-      .then((data) => setGradientStyle(data));
-  };
-  const fetchingLoopsStyles = async () => {
-    fetch("http://localhost:3000/LoopsUps.txt")
-      .then((res) => res.text())
-      .then((data) => setLoopsStyle(data));
-  };
-  useEffect(() => {
-    fetchingSpiralStyles();
-  }, [dots]);
-  useEffect(() => {
-    fetchingNeonStyles();
-  }, [neon]);
-  useEffect(() => {
-    fetchingLoopsStyles();
-  }, [corner]);
-  useEffect(() => {
-    fetchingGradientStyles();
-  }, [gradient]);
-  useEffect(() => {
-    fetchingBubbleStyles();
-  }, [show]);
-  useEffect(() => {
-    fetchingQuakeStyles();
-  }, [moving]);
+  
   function seeBubbles() {
     if (show === "") {
       setShow("yes");
@@ -137,25 +90,18 @@ export default function Model() {
   }
 
   const showCode = () => {
-    // {show === 'yes' ? allBubbles :null}
-    // {moving === 'yes' ? quakeStyle :null}
-    // {gradient === 'yes' ? gradientStyle :null}
-    // {corner === 'yes' ? loopsStyle : null}
-    // {neon === 'yes' ? neonStyle : null}
-    // {dots === 'yes' ? spiralStyle : null}
-
     if (show === "yes") {
-      return allBubbles;
+      return <TagsforBubbles/>;
     } else if (moving === "yes") {
-      return quakeStyle;
+      return <TagsforEarthQuake/>;
     } else if (gradient === "yes") {
-      return gradientStyle;
+      return <TagsforGradient/>;
     } else if (corner === "yes") {
-      return loopsStyle;
+      return <TagsforLoops/>;
     } else if (neon === "yes") {
-      return neonStyle;
+      return <TagsforNeon/>;
     } else if (dots === "yes") {
-      return spiralStyle;
+      return <TagsforSpiral/>;
     } else {
       return <p>Elija una animación. Su código aparecerá aquí</p>;
     }

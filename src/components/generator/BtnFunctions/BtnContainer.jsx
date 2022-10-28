@@ -6,6 +6,7 @@ import ChekBack from "./Functions/BackgroundColors";
 import ChangePicture from "./Functions/ChangeProfileImg";
 import Shadow from "./Functions/ShadowEffect";
 import BorderStyles from "./Functions/BordersAndStyles";
+import SocialMediaDisplay from "./Functions/SocialMediaBtn";
 export default function GirdOfButtons(){
   return(
         <Cotnainer>
@@ -30,7 +31,7 @@ export default function GirdOfButtons(){
                 <Trimmings/>
               </div>
               <div className="ftn-container">
-                botones de rede sociales
+                <SocialMediaDisplay/>
               </div>
               <div className="ftn-container">
                 vertical u horizontal

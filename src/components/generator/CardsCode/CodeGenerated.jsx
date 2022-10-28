@@ -2,14 +2,7 @@ import styled from "styled-components"
 import { useContext } from "react"
 import ColorContext from "../../../context/ColorContext"
 export default function MyCode(){
-    const {fontSize,borderStyle,shadow,bgColor,opacity,formImage}=useContext(ColorContext)
-
-    /*const copyToClipboard = ()=>{
-        const codeCard = document.getElementById("codeCard")
-        console.log({codeCard})
-    }
-    copyToClipboard()
-    */
+    const {fontSize,borderStyle,shadow,bgColor,opacity,formImage,seeSocialMedia}=useContext(ColorContext)
 
     return(
         <Container >
@@ -35,7 +28,11 @@ export default function MyCode(){
                     </div>
                     <hr class="line"/>
                     <div class="description">
-                    <div class="profileinfo"> nombre</div>
+                    <div class="profileinfo"> 
+                        <button className="social"></button>
+                        <button className="social"></button>
+                        <button className="social"></button>
+                    </div>
                         <hr class="verticaldiv"/>
                     <div class="profileinfo"> apellido</div>
                     </div>
@@ -91,6 +88,17 @@ export default function MyCode(){
         display: flex;  
         justify-content: space-between;
     
+    }
+    .social{
+        display: ${seeSocialMedia === '' ? 'none' : seeSocialMedia};
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: url('https://cdn-icons-png.flaticon.com/512/281/281769.png');
+        background-size: cover;
+        border: none;
+        margin: 2px;
+        cursor: pointer;
     }
     .profileinfo{
         height: 2rem;

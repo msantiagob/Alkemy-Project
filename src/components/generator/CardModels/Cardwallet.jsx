@@ -6,12 +6,12 @@ import { useContext } from "react";
 
 export default function Wallet(){
 
-    const { bgColor,images, opacity,shadow,borderStyle,fontSize } = useContext(ColorContext);
+    const { bgColor,images, opacity,shadow,borderStyle,fontSize,seeSocialMedia } = useContext(ColorContext);
 
     
     
     return(
-        <Container newBgColor={`${bgColor}`} shadowDisplay={shadow} newFontSize={fontSize} newBorders={borderStyle}>
+        <Container newBgColor={`${bgColor}`} displayMediaBtn={seeSocialMedia} shadowDisplay={shadow} newFontSize={fontSize} newBorders={borderStyle}>
             <header className="imageprofile">
                 <AddNewImage props={images}/>
             </header>
@@ -30,7 +30,11 @@ export default function Wallet(){
                 </div>
                 <hr className="line"/>
                 <div className="description">
-                <div className="profileinfo"> nombre</div>
+                <div className="profileinfo"> 
+                    <button className="social"></button>
+                    <button className="social"></button>
+                    <button className="social"></button>
+                </div>
                     <hr className="verticaldiv"/>
                 <div className="profileinfo"> apellido</div>
                 </div>
@@ -59,7 +63,7 @@ const Container=styled.article`
         position: absolute;
         border-radius: 0 0 10px 10px;
         top: 40%;
-        background: ${(props)=>props.newBgColor === '' ? 'blue': props.newBgColor};
+        background: ${(props)=>props.newBgColor === '' ? 'green': props.newBgColor};
         padding-top: 35%;
     }
     .imageprofile{
@@ -81,7 +85,17 @@ const Container=styled.article`
         width: 12rem;              
         text-align: center;
         color: black;
-        
+    }
+    .social{
+        display: ${(props)=>props.displayMediaBtn === '' ? 'none' : props.displayMediaBtn};
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: url('https://cdn-icons-png.flaticon.com/512/281/281769.png');
+        background-size: cover;
+        border: none;
+        margin: 2px;
+        cursor: pointer;
     }
     .verticaldiv{       
         transform: rotate(90deg);

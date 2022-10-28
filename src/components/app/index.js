@@ -1,5 +1,5 @@
 import "./style.css";
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Generator from "../generator/Generator";
 import { Login } from "../auth/Login/Login";
@@ -12,7 +12,13 @@ import { Header } from "../header/Header";
 function App() {
 
   const [isLogged, setIsLogged] = useState(false);
-
+  useEffect(()=>{
+    const responseLogg=window.localStorage.getItem('Display_nav')
+    if(responseLogg !== null) setIsLogged(JSON.parse(responseLogg))
+  },[])
+  useEffect(()=>{
+    window.localStorage.setItem('Display_nav',JSON.stringify(isLogged))
+  },[isLogged])
   const RequireAuth = ({ children }) => {
     if (!localStorage.getItem("logged")) {
       return <Navigate to="/login" replace={true} />;
@@ -24,6 +30,7 @@ function App() {
     <ColorProvider>
       <BrowserRouter>
         {isLogged === true ? <Header/> : null}
+      
         <Routes>
           <Route
             path="/"

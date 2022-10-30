@@ -3,7 +3,7 @@ import styled,{keyframes} from "styled-components";
 export default function Bubble ({ver}){
     return (
         
-        <Container variant={ver}>                  
+        <Container  variant={ver}>                  
         
             <div className="ball"></div>
             <div className="ball"></div>
@@ -56,7 +56,7 @@ const Container = styled.div`
     display: flex;
     justify-content:space-between ;
     position: relative;    
-    outline: 2px solid blue;
+    border: 2px solid #fff;
     visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
     .ball{
             width: 15px;

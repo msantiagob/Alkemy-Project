@@ -7,7 +7,7 @@ export default function ChekBack(){
 
     return(
         <Container>
-            <label htmlFor="bg-color">BG color</label>
+            <label htmlFor="bg-color">Color de fondo</label>
             <input type='color' name='bg-color' onChange={handleBgColorChange}/>
 
         </Container>
@@ -25,5 +25,8 @@ const Container=styled.div`
         width: 40%;
         display: flex;
         justify-content: space-between;
+    }
+    input{
+        cursor: pointer;
     }
 `

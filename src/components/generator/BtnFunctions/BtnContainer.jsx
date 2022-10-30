@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { useState,useEffect } from "react";
 import FontMenu from "./Functions/DropdownMenu";
 import ValuesBar from "./Functions/OpacityValues";
 import Trimmings from "./Functions/ImageShape";
 import ChekBack from "./Functions/BackgroundColors";
 import ChangePicture from "./Functions/ChangeProfileImg";
+import Shadow from "./Functions/ShadowEffect";
+import BorderStyles from "./Functions/BordersAndStyles";
+import SocialMediaDisplay from "./Functions/SocialMediaBtn";
 export default function GirdOfButtons(){
   return(
         <Cotnainer>
@@ -20,16 +22,16 @@ export default function GirdOfButtons(){
                    <ValuesBar/>
               </div>
               <div className="ftn-container">
-                bordes y estilos
+                <BorderStyles/>
               </div>
               <div className="ftn-container">
-                Sombras para efectos 3D
+                <Shadow/>
               </div>
               <div className="ftn-container">
                 <Trimmings/>
               </div>
               <div className="ftn-container">
-                botones de rede sociales
+                <SocialMediaDisplay/>
               </div>
               <div className="ftn-container">
                 vertical u horizontal
@@ -40,14 +42,16 @@ export default function GirdOfButtons(){
 const Cotnainer=styled.div`
      width: 40%;
     height: 100%;
-    outline: 2px solid blue;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     .ftn-container{
         outline: 2px solid black;
-        width: 180px;
+        width: 178px;
         height: 130px;
         text-align: center;
-       // margin: auto;
+        :hover{
+          box-shadow: inset 0 0 15px #fff;
+        }
     }
 `

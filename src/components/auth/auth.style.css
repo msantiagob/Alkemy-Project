@@ -76,8 +76,4 @@
     a{
         text-align: center;
     }
-    a:hover{
-        background-color: rgb(230, 133, 133);
-        color: white;
-    }
 }

@@ -1,76 +1,75 @@
-import { useState } from "react";
-import styled,{keyframes} from "styled-components";
-
-export default function Loop({ver}){
-    const[time,setTime]=useState(4) 
+export default function TagsforLoops(){
     return(
-        <Container variant={ver} timeLapse={`${time}s`} onMouseOver={()=>setTime(1)} onMouseOut={()=>setTime(4)} >
-            <div className="content-animation">
-            <div className="spiral"  >
-            <div className="diamond4">
+        <div>
+            <pre>
+        {
+            `
+            <div class='container'>
+            <div class="content-animation">
+            <div class="spiral"  >
+            <div class="diamond4">
             </div>
-            <div className="diamond4">
-            </div>
-            </div>
-            <div className="spiral"  >
-            <div className="diamond4">
-            </div>
-            <div className="diamond4">
+            <div class="diamond4">
             </div>
             </div>
-            <div className="spiral"  >
-            <div className="diamond4">
+            <div class="spiral"  >
+            <div class="diamond4">
             </div>
-            <div className="diamond4">
-            </div>
-            </div>
-            <div className="spiral"  >
-            <div className="diamond4">
-            </div>
-            <div className="diamond4">
+            <div class="diamond4">
             </div>
             </div>
-            <div className="spiral"  >
-            <div className="diamond4">
+            <div class="spiral"  >
+            <div class="diamond4">
             </div>
-            <div className="diamond4">
-            </div>
-            </div>
-            <div className="spiral"  >
-            <div className="diamond4">
-            </div>
-            <div className="diamond4">
+            <div class="diamond4">
             </div>
             </div>
-            <div className="spiral"  >
-            <div className="diamond4">
+            <div class="spiral"  >
+            <div class="diamond4">
             </div>
-            <div className="diamond4">
-            </div>
-            </div>
-            <div className="spiral"  >
-            <div className="diamond4">
-            </div>
-            <div className="diamond4">
+            <div class="diamond4">
             </div>
             </div>
-            <div className="spiral"  >
-            <div className="diamond4">
+            <div class="spiral"  >
+            <div class="diamond4">
             </div>
-            <div className="diamond4">
-            </div>
-            </div>
-            <div className="spiral"  >
-            <div className="diamond4">
-            </div>
-            <div className="diamond4">
+            <div class="diamond4">
             </div>
             </div>
+            <div class="spiral"  >
+            <div class="diamond4">
             </div>
-        </Container>
-    )
-}
-const animate=keyframes`
+            <div class="diamond4">
+            </div>
+            </div>
+            <div class="spiral"  >
+            <div class="diamond4">
+            </div>
+            <div class="diamond4">
+            </div>
+            </div>
+            <div class="spiral"  >
+            <div class="diamond4">
+            </div>
+            <div class="diamond4">
+            </div>
+            </div>
+            <div class="spiral"  >
+            <div class="diamond4">
+            </div>
+            <div class="diamond4">
+            </div>
+            </div>
+            <div class="spiral"  >
+            <div class="diamond4">
+            </div>
+            <div class="diamond4">
+            </div>
+            </div>
+            </div>
+        </div>
+
+@keyframes animate{
     0%{
         transform: rotateY(0deg);
         opacity: 1;
@@ -88,9 +87,9 @@ const animate=keyframes`
         transform: rotateY(360deg);
        opacity: 1;
     }
-`
+ }
 
-const Container=styled.div`
+.container{
     height: 500px;
     width: 400px;
     border: 2px solid black;
@@ -106,7 +105,7 @@ const Container=styled.div`
     justify-content: center;
     text-align: center;
     transition: 8s;
-    visibility: ${(props)=>props.variant === '' ? 'hidden' : props.variant === 'yes' ? 'visible' : 'hidden'};
+    }
     .content-animation{
         height: 500px;
         width: 500px;
@@ -126,8 +125,9 @@ const Container=styled.div`
         box-sizing: content-box;
         position: relative;
         margin: 10px 0 25px 0;
-        animation: ${animate} linear ${(props)=>props.timeLapse} infinite;
-        &::after {
+        animation: animate linear 3s infinite;
+        }
+    .diamond4::after {
             content: '';
             position: absolute;
             top: 12.5px;
@@ -140,13 +140,16 @@ const Container=styled.div`
             
         }
     }
-    &:hover {
+.container:hover {
         color: #fff;
   --_c: var(--c);
   --_p: 100%;
   transition: 2.5s, color 2s 2.5s, background-color 4s 4s;
   }
   
-`
-
-
+            `
+        }
+            </pre>
+        </div>
+    )
+}

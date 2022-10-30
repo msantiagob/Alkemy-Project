@@ -1,22 +1,57 @@
 import "./style.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {useState, useEffect} from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Generator from "../generator/Generator";
-import { Home } from "../Home/Home";
-import { Login } from "../auth/Login/Login"
-import { Register } from "../auth/Register/Register"
-import Lauta from "../Animations/Examples";
+import { Login } from "../auth/Login/Login";
+import { LogOut } from "../auth/LogOut/LogOut";
+import { Register } from "../auth/Register/Register";
+import Model from "../Animations/Examples";
 import { ColorProvider } from "../../context/ColorContext";
+import { Header } from "../header/Header";
 
 function App() {
+
+  const [isLogged, setIsLogged] = useState(false);
+  useEffect(()=>{
+    const responseLogg=window.localStorage.getItem('Display_nav')
+    if(responseLogg !== null) setIsLogged(JSON.parse(responseLogg))
+  },[])
+  useEffect(()=>{
+    window.localStorage.setItem('Display_nav',JSON.stringify(isLogged))
+  },[isLogged])
+  const RequireAuth = ({ children }) => {
+    if (!localStorage.getItem("logged")) {
+      return <Navigate to="/login" replace={true} />;
+    }
+    return children;
+  };
+
   return (
     <ColorProvider>
       <BrowserRouter>
+        {isLogged === true ? <Header/> : null}
+      
         <Routes>
-          <Route path="/" element={<Generator />} />
-          <Route path='lauta' element={<Lauta/>}/>
-          <Route path='/home' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/register' element={<Register />} />
+          <Route
+            path="/"
+            element={
+              <RequireAuth>
+                <Generator />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="card-animada"
+            element={
+              <RequireAuth>
+                <Model />
+              </RequireAuth>
+            }
+          />
+        
+          <Route path="/login" element={<Login setIsLogged={setIsLogged}/>} />
+          <Route path="/log-out" element={<LogOut setIsLogged={setIsLogged} />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </ColorProvider>

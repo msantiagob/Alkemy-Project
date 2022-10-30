@@ -77,39 +77,31 @@ const Container=styled.div`
     background: url("https://rickandmortyapi.com/api/character/avatar/1.jpeg");
    }
    span:nth-child(1){
-   // background: yellow;
     clip-path: polygon(100% 50%, 100% 0, 50% 50%);;
     
    }
    span:nth-child(2){
-  //  background: green;
     clip-path: polygon(100% 0, 50% 0, 50% 50%);
    }
    span:nth-child(3){
-  //  background: blue;
     clip-path: polygon(100% 50%, 100% 100%, 50% 50%);
    }
    span:nth-child(4){
-  //  background: goldenrod;
     clip-path: polygon(50% 50%, 100% 100%, 50% 100%);
    }
    span:nth-child(5){
-   // background: #8020da;
     clip-path: polygon(50% 50%, 0% 100%, 50% 100%);
 
    }
    span:nth-child(6){
-  //  background: #2083da;
     clip-path: polygon(50% 50%, 0 50%, 0 100%);
 
    }
    span:nth-child(7){
-  //  background: #da20b5;
     clip-path: polygon(50% 50%, 0 50%, 0 0);
 
    }
    span:nth-child(8){
- //   background: #da2036;
     clip-path: polygon(50% 50%, 50% 0, 0 0);
 
    }

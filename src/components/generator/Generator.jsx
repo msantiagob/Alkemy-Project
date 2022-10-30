@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import GirdOfButtons from "./BtnFunctions/BtnContainer";
 import Wallet from "./CardModels/Cardwallet";
+import MyCode from "./CardsCode/CodeGenerated";
 
 
 
@@ -14,7 +15,7 @@ export default function Generator(){
         <GirdOfButtons/>
       </Cardplay>
       <Codeplay>
-      codigo
+      <MyCode/>
       </Codeplay>
     </Container>
   );
@@ -22,24 +23,25 @@ export default function Generator(){
 
 
 
-const Container = styled.body`
+const Container = styled.div`
     display:  grid;    
     height: 100vh;
     width: auto;
     padding-top: 1%;
     background: none;
     color:#000000;
+    background: #8888fc;
+
 `
 
 const Cardplay=styled.header`
   width: 100%;
-  outline: 2px solid red;
-  height: 60vh;
+  height: 65vh;
   display: flex;
   justify-content: space-around;
+  margin-bottom: 1%;
 `
 const Codeplay=styled.footer`
   width: 100%;
-  outline: 2px solid red;
-  height: 35vh;
+  height: 30vh;
 `

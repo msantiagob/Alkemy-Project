@@ -6,17 +6,16 @@ import { useContext } from "react";
 
 export default function Wallet(){
 
-    const { bgColor,images } = useContext(ColorContext);
+    const { bgColor,images, opacity,shadow,borderStyle,fontSize,seeSocialMedia } = useContext(ColorContext);
 
     
     
     return(
-        <Container newBgColor={`${bgColor}`}>
-            <header>
-            
+        <Container newBgColor={`${bgColor}`} displayMediaBtn={seeSocialMedia} shadowDisplay={shadow} newFontSize={fontSize} newBorders={borderStyle}>
+            <header className="imageprofile">
                 <AddNewImage props={images}/>
             </header>
-            <footer >
+            <footer style={ { opacity: opacity} }>
                 <div className="positions">
                 <div className="description">
                 <div className="profileinfo"> nombre</div>
@@ -31,7 +30,11 @@ export default function Wallet(){
                 </div>
                 <hr className="line"/>
                 <div className="description">
-                <div className="profileinfo"> nombre</div>
+                <div className="profileinfo"> 
+                    <button className="social"></button>
+                    <button className="social"></button>
+                    <button className="social"></button>
+                </div>
                     <hr className="verticaldiv"/>
                 <div className="profileinfo"> apellido</div>
                 </div>
@@ -43,23 +46,28 @@ export default function Wallet(){
 const Container=styled.article`
     width: 20%;
     height: 100%;
-    outline: 2px solid blue;
     margin-left: 5%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    
+    font-size: ${(props)=>props.newFontSize === '' ? '15px' : props.newFontSize};
+    border: ${(props)=>props.newBorders.border === undefined ? '4px ridge white' : props.newBorders.border};
+    border-top: ${(props)=>props.newBorders.top === undefined ? 'ridge 4px white' : props.newBorders.top};
+    border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'ridge 4px white' : props.newBorders.bottom};
+    border-radius:  ${(props)=>props.newBorders.radius === undefined ? 'none' : props.newBorders.radius};
+    box-shadow: ${(props)=> props.shadowDisplay === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
     footer{
         height:14.5rem;
         width: 84%;
-        //outline: 2px solid green;
         position: absolute;
         border-radius: 0 0 10px 10px;
         top: 40%;
-        z-index: -1;
-        background: ${(props)=>props.newBgColor};
+        background: ${(props)=>props.newBgColor === '' ? 'green': props.newBgColor};
         padding-top: 35%;
+    }
+    .imageprofile{
+        z-index: 1;
     }
     .positions{
         display: flex;
@@ -74,9 +82,20 @@ const Container=styled.article`
     }
     .profileinfo{
         height: 2rem;
-        width: 12rem;
-      // outline: 2px solid red;                
+        width: 12rem;              
         text-align: center;
+        color: black;
+    }
+    .social{
+        display: ${(props)=>props.displayMediaBtn === '' ? 'none' : props.displayMediaBtn};
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: url('https://cdn-icons-png.flaticon.com/512/281/281769.png');
+        background-size: cover;
+        border: none;
+        margin: 2px;
+        cursor: pointer;
     }
     .verticaldiv{       
         transform: rotate(90deg);

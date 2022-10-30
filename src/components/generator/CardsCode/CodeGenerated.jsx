@@ -54,9 +54,9 @@ export default function MyCode(){
     align-items: center;
     position: relative;
     font-size: ${fontSize === '' ? '15px' : fontSize};
-    border: ${borderStyle.border === undefined ? '4px solid blue' : borderStyle.border};
-    border-top: ${borderStyle.top === undefined ? 'solid' : borderStyle.top};
-    border-bottom:  ${borderStyle.bottom === undefined ? 'solid' : borderStyle.bottom};
+    border: ${borderStyle.border === undefined ? '4px ridge white' : borderStyle.border};
+    border-top: ${borderStyle.top === undefined ? '4px ridge white' : borderStyle.top};
+    border-bottom:  ${borderStyle.bottom === undefined ? '4px ridge white' : borderStyle.bottom};
     border-radius:  ${borderStyle.radius === undefined ? 'none' : borderStyle.radius};
     box-shadow: ${shadow === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
     }

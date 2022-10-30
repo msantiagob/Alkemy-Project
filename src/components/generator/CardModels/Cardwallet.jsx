@@ -52,9 +52,9 @@ const Container=styled.article`
     align-items: center;
     position: relative;
     font-size: ${(props)=>props.newFontSize === '' ? '15px' : props.newFontSize};
-    border: ${(props)=>props.newBorders.border === undefined ? '4px solid blue' : props.newBorders.border};
-    border-top: ${(props)=>props.newBorders.top === undefined ? 'solid' : props.newBorders.top};
-    border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'solid' : props.newBorders.bottom};
+    border: ${(props)=>props.newBorders.border === undefined ? '4px ridge white' : props.newBorders.border};
+    border-top: ${(props)=>props.newBorders.top === undefined ? 'ridge 4px white' : props.newBorders.top};
+    border-bottom:  ${(props)=>props.newBorders.bottom === undefined ? 'ridge 4px white' : props.newBorders.bottom};
     border-radius:  ${(props)=>props.newBorders.radius === undefined ? 'none' : props.newBorders.radius};
     box-shadow: ${(props)=> props.shadowDisplay === false ? 'none' : '8px 8px 8px 0px rgba(0,0,0,0.5)'};
     footer{

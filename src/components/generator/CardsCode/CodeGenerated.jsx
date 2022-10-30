@@ -10,7 +10,7 @@ export default function MyCode(){
           <pre id="codeCard">
            {`
              <div class='container'>
-                <header className="imageprofile">
+                <header class="imageprofile">
                     <img src='' alt=''/>
                 </header>
                 <footer >
@@ -29,9 +29,9 @@ export default function MyCode(){
                     <hr class="line"/>
                     <div class="description">
                     <div class="profileinfo"> 
-                        <button className="social"></button>
-                        <button className="social"></button>
-                        <button className="social"></button>
+                        <button class="social"></button>
+                        <button class="social"></button>
+                        <button class="social"></button>
                     </div>
                         <hr class="verticaldiv"/>
                     <div class="profileinfo"> apellido</div>
